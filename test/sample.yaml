@@ -1,43 +1,43 @@
 apiVersion: v1
 kind: Service
 metadata:
-		namespace: ${env("CLOUD66_STACK_NAME")}
-		name: ${now["%v"]}
-		labels:  # be careful changing labels. It can break your deployment
-				app: ${digest("hello", "sha1", "base64")}
-				tier: ${service}
+    namespace: ${env("CLOUD66_STACK_NAME")}
+    name: ${now["%v"]}
+    labels:  # be careful changing labels. It can break your deployment
+        app: ${digest("hello", "sha1", "base64")}
+        tier: ${service}
 spec:
-		type: NodePort
-		ports:
-		- port: 80
-				targetPort: 3000
-		selector:
-				app: ${namespace}
-				tier: ${service}
+    type: NodePort
+    ports:
+    - port: 80
+        targetPort: 3000
+    selector:
+        app: ${namespace}
+        tier: ${service}
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-		namespace: ${namespace}
-		name: ${service}
+    namespace: ${namespace}
+    name: ${service}
 spec:
-		replicas: 4
-		template:
-				metadata:
-						labels: # be careful changing labels. It can break your deployment
-								app: ${namespace}
-								tier: ${service}
-								track: ${random(50)}
-				spec:
-						terminationGracePeriodSeconds: 60
-						containers:
-								- image: '${service["image"]}'
-										name: ${service}
-										ports:
-										- containerPort: 3000
-										command: "foo bar"
-										envFrom:
-										- configMapRef:
-														name: app-config
-										- secretRef:
-														name: app-secrets
+    replicas: 4
+    template:
+        metadata:
+            labels: # be careful changing labels. It can break your deployment
+                app: ${namespace}
+                tier: ${service}
+                track: ${random(50)}
+        spec:
+            terminationGracePeriodSeconds: 60
+            containers:
+                - image: '${service["image"]}'
+                    name: ${service}
+                    ports:
+                    - containerPort: 3000
+                    command: "foo bar"
+                    envFrom:
+                    - configMapRef:
+                            name: app-config
+                    - secretRef:
+                            name: app-secrets
