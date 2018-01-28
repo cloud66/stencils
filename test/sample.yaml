@@ -10,7 +10,7 @@ spec:
     type: NodePort
     ports:
     - port: 80
-        targetPort: 3000
+      targetPort: 3000
     selector:
         app: ${namespace}
         tier: ${service}
@@ -31,13 +31,13 @@ spec:
         spec:
             terminationGracePeriodSeconds: 60
             containers:
-                - image: '${service["image"]}'
-                    name: ${service}
-                    ports:
-                    - containerPort: 3000
-                    command: "foo bar"
-                    envFrom:
-                    - configMapRef:
-                            name: app-config
-                    - secretRef:
-                            name: app-secrets
+              - image: '${service["image"]}'
+                name: ${service}
+                ports:
+                - containerPort: 3000
+                command: "foo bar"
+                envFrom:
+                - configMapRef:
+                        name: app-config
+                - secretRef:
+                        name: app-secrets
