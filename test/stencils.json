@@ -53,7 +53,7 @@
 			{
 				"default": true,
 				"template": "blank.yml",
-				"file": "%s.yml",
+				"file": "blank.yml",
 				"desc": "Empty stencil template",
 				"tags": []
 			}
@@ -65,9 +65,9 @@
 		[
 			{
 				"default": true,
-				"template": "blank.yml",
-				"file": "%s.yml",
-				"desc": "Empty stencil template",
+				"template": "setup.yml",
+				"file": "setup.yml",
+				"desc": "Formation setup configuration",
 				"tags": []
 			}
 		]
