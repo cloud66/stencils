@@ -1,6 +1,7 @@
 [
 	{
 		"type": "service",
+		"title": "Service",
 		"stencils":
 		[
 			{
@@ -28,6 +29,7 @@
 	},
 	{
 		"type": "env",
+		"title": "Configuration",
 		"stencils":
 		[
 			{
@@ -48,6 +50,7 @@
 	},
 	{
 		"type": "custom",
+		"title": "Custom",
 		"stencils":
 		[
 			{
@@ -60,7 +63,8 @@
 		]
 	},
 	{
-		"type": "formation",
+		"type": "stack",
+		"title": "Formation",
 		"stencils":
 		[
 			{
