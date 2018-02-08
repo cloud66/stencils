@@ -1,6 +1,0 @@
-# this sets up the cluster with namepsace etc
-# should be the first yaml to run
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: ${formation}

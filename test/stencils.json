@@ -1,7 +1,6 @@
 [
 	{
 		"type": "service",
-		"class": "ServiceKubeStencil",
 		"stencils":
 		[
 			{
@@ -29,7 +28,6 @@
 	},
 	{
 		"type": "env",
-		"class": "EnvStencil",
 		"stencils":
 		[
 			{
@@ -50,13 +48,12 @@
 	},
 	{
 		"type": "custom",
-		"class": "CustomStencil",
 		"stencils":
 		[
 			{
 				"default": true,
 				"template": "blank.yml",
-				"file": "%s.yml",
+				"file": "blank.yml",
 				"desc": "Empty stencil template",
 				"tags": []
 			}
@@ -64,14 +61,13 @@
 	},
 	{
 		"type": "formation",
-		"class": "StackKubeStencil",
 		"stencils":
 		[
 			{
 				"default": true,
-				"template": "blank.yml",
-				"file": "%s.yml",
-				"desc": "Empty stencil template",
+				"template": "setup.yml",
+				"file": "setup.yml",
+				"desc": "Formation setup configuration",
 				"tags": []
 			}
 		]
