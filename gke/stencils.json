@@ -1,18 +1,22 @@
 [
 	{
 		"type": "service",
+		"class": "ServiceKubeStencil",
 		"stencils": []
 	},
 	{
 		"type": "env",
+		"class": "EnvStencil",
 		"stencils": []
 	},
 	{
 		"type": "custom",
+		"class": "CustomStencil",
 		"stencils": []
 	},
 	{
-		"type": "stack",
+		"type": "formation",
+		"class": "StackKubeStencil",
 		"stencils":
 		[
 			{
