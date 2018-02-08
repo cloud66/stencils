@@ -1,10 +1,11 @@
 [
 	{
-		"type": "service",
+		"group": "service",
 		"title": "Service",
 		"stencils":
 		[
 			{
+				"type": "service",
 				"default": true,
 				"template": "service.yml",
 				"file": "%s_service.yml",
@@ -12,6 +13,7 @@
 				"tags": ["service"]
 			},
 			{
+				"type": "service",
 				"default": false,
 				"template": "deploy.yml",
 				"file": "%s_deploy.yml",
@@ -19,6 +21,7 @@
 				"tags": ["deployment"]
 			},
 			{
+				"type": "service",
 				"default": false,
 				"template": "ingress.yml",
 				"file": "%s_ingress.yml",
@@ -28,11 +31,12 @@
 		]
 	},
 	{
-		"type": "env",
+		"group": "configuration",
 		"title": "Configuration",
 		"stencils":
 		[
 			{
+				"type": "env",
 				"default": true,
 				"template": "env.yml",
 				"file": "env.yml",
@@ -40,6 +44,7 @@
 				"tags": ["config", "environment"]
 			},
 			{
+				"type": "env",
 				"default": false,
 				"template": "secrets.yml",
 				"file": "secrets.yml",
@@ -54,6 +59,7 @@
 		"stencils":
 		[
 			{
+				"type": "custom",
 				"default": true,
 				"template": "blank.yml",
 				"file": "blank.yml",
@@ -63,11 +69,12 @@
 		]
 	},
 	{
-		"type": "stack",
+		"type": "formation",
 		"title": "Formation",
 		"stencils":
 		[
 			{
+				"type": "stack",
 				"default": true,
 				"template": "setup.yml",
 				"file": "setup.yml",
