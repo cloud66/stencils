@@ -54,7 +54,7 @@
 		]
 	},
 	{
-		"type": "custom",
+		"group": "custom",
 		"title": "Custom",
 		"stencils":
 		[
@@ -69,7 +69,7 @@
 		]
 	},
 	{
-		"type": "formation",
+		"group": "formation",
 		"title": "Formation",
 		"stencils":
 		[
