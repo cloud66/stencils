@@ -58,5 +58,18 @@
 				"tags": []
 			}
 		]
+	},
+	{
+		"type": "stack",
+		"stencils":
+		[
+			{
+				"default": true,
+				"template": "blank.yml",
+				"file": "%s.yml",
+				"desc": "Empty stencil template",
+				"tags": []
+			}
+		]
 	}
 ]

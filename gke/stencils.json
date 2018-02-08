@@ -1,0 +1,27 @@
+[
+	{
+		"type": "service",
+		"stencils": []
+	},
+	{
+		"type": "env",
+		"stencils": []
+	},
+	{
+		"type": "custom",
+		"stencils": []
+	},
+	{
+		"type": "stack",
+		"stencils":
+		[
+			{
+				"default": true,
+				"template": "setup.yml",
+				"file": "setup.yml",
+				"desc": "Namespace setup",
+				"tags": ["setup"]
+			}
+		]
+	}
+]
