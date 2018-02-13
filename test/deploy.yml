@@ -15,6 +15,6 @@ spec:
           image: ${concat(service["image"], ":", service["tag"])}
 #          ports:
 #            - containerPort: PORT
-#            command: ["COMMAND"]
+#          command: ["COMMAND"]
       imagePullSecrets:
       - name: cloud66-registry-pull-secret
