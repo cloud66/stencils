@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: ${namespace}
+  name: ${concat(service, "-dep")}
+spec:
+  template:
+    metadata:
+      labels: # be careful changing labels. It can break your deployment
+        app: ${namespace}
+        tier: ${service}
+    spec:
+      containers:
+        - name: ${service}
+          image: ${concat(service["image"], ":", service["tag"])}
+#          ports:
+#            - containerPort: PORT
+#            command: ["COMMAND"]
+      imagePullSecrets:
+      - name: cloud66-registry-pull-secret

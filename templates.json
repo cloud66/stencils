@@ -13,10 +13,5 @@
 		"id": "minikubes",
 		"name": "Minikubes",
 		"description": "Template set for deploying to Minikubes locally"
-	},
-	{
-		"id": "fargate",
-		"name": "AWS Fargate",
-		"description": "Template set for deploying to AWS Fargate"
 	}
 ]
