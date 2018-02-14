@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ${namespace}
+  name: ${formation}
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: ${namespace}
+  namespace: ${formation}
   name: cloud66-registry-pull-secret
 data:
   .dockerconfigjson: ${env("REGISTRY_AUTH")}
