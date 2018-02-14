@@ -4,12 +4,12 @@ metadata:
   namespace: ${formation}
   name: ${concat(service, "-svc")}
   labels:
-    app: ${namespace}
+    app: ${stackname}
     tier: ${service}
 spec:
 #  ports:
 #  - port: EXTERNAL_PORT
 #    targetPort: INTERNAL_PORT
   selector:
-    app: ${namespace}
+    app: ${stackname}
     tier: ${service}
