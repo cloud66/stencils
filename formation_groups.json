@@ -1,0 +1,20 @@
+{
+	"version": "v1",
+	"formations": [
+		{
+			"id": "test",
+			"name": "Test",
+			"description": "A set of templates for testing"
+		},
+		{
+			"id": "gke",
+			"name": "GKE",
+			"description": "Template set for deploying to Goolge Kubernetes Engine"
+		},
+		{
+			"id": "minikubes",
+			"name": "Minikubes",
+			"description": "Template set for deploying to Minikubes locally"
+		}
+	]
+}
