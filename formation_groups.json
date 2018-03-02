@@ -7,6 +7,11 @@
 			"description": "A set of templates for testing"
 		},
 		{
+			"id": "sample",
+			"name": "Sample",
+			"description": "A set of templates as a sample for a private formation template set"
+		},
+		{
 			"id": "gke",
 			"name": "GKE",
 			"description": "Template set for deploying to Goolge Kubernetes Engine"
