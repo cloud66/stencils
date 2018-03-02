@@ -60,12 +60,8 @@
 				"description": "Blank custom file",
 				"kind": "custom",
 				"tags": []
-			}]
-		},
-		{
-			"name": "Custom",
-			"section": "custom",
-			"templates": [{
+			},
+			{
 				"name": "Redis",
 				"filename": "redis.yml",
 				"template_filename": "redis.yml",
