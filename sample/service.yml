@@ -4,17 +4,13 @@ kind: Service
 metadata:
   namespace: ${formation}
   name: ${concat(service, "-svc")}
-<<<<<<< HEAD
-=======
   annotations:
     cloud66.com/snapshot/uid: ${snapshot("uid")}
     cloud66.com/snapshot/gitref: ${snapshot("gitref")}
->>>>>>> 879b778082b841fc08db5a68e6119ceb202f3313
   labels:
     app: ${stackname}
     tier: ${service}
 spec:
-  type: LoadBalancer   # This will create a GCE Load Balancer for you
   ports:
   - port: ${require("EXTERNAL_PORT")}
     targetPort: ${require("INTERNAL_PORT")}
