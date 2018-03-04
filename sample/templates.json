@@ -52,6 +52,14 @@
 				"description": "Blank custom file",
 				"kind": "custom",
 				"tags": []
+			},
+			{
+				"name": "Redis",
+				"filename": "redis.yml",
+				"template_filename": "redis.yml",
+				"description": "Basic Redis",
+				"kind": "custom",
+				"tags": ["service"]
 			}]
 		}
 	]
