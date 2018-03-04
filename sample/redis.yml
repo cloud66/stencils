@@ -4,6 +4,12 @@ kind: Deployment
 metadata:
   namespace: ${formation}
   name: redis
+<<<<<<< HEAD
+=======
+  annotations:
+    cloud66.com/snapshot/uid: ${snapshot("uid")}
+    cloud66.com/snapshot/gitref: ${snapshot("gitref")}
+>>>>>>> 879b778082b841fc08db5a68e6119ceb202f3313
 spec:
   template:
     metadata:
@@ -22,6 +28,12 @@ kind: Service
 metadata:
   namespace: ${formation}
   name: redis
+<<<<<<< HEAD
+=======
+  annotations:
+    cloud66.com/snapshot/uid: ${snapshot("uid")}
+    cloud66.com/snapshot/gitref: ${snapshot("gitref")}
+>>>>>>> 879b778082b841fc08db5a68e6119ceb202f3313
   labels:
     app: ${stackname}
     tier: redis

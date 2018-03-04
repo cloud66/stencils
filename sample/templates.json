@@ -39,14 +39,6 @@
 					"description": "ConfigMaps",
 					"kind": "env",
 					"tags": ["config"]
-				},
-				{
-					"name": "Secrets",
-					"filename": "secrets.yml",
-					"template_filename": "secrets.yml",
-					"description": "Secrets",
-					"kind": "env",
-					"tags": ["config", "secret"]
 				}
 			]
 		},
@@ -65,9 +57,9 @@
 				"name": "Redis",
 				"filename": "redis.yml",
 				"template_filename": "redis.yml",
-				"description": "Sample Redis Stencil",
+				"description": "Basic Redis",
 				"kind": "custom",
-				"tags": ["service", "redis"]
+				"tags": ["service"]
 			}]
 		}
 	]
