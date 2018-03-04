@@ -4,3 +4,15 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: ${formation}
+<<<<<<< Updated upstream
+=======
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: ${formation}
+  name: cloud66-registry-pull-secret
+data:
+  .dockerconfigjson: ${registry_credentials()}
+type: kubernetes.io/dockerconfigjson
+>>>>>>> Stashed changes

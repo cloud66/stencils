@@ -1,3 +1,4 @@
+# this is a Stencil for Kubernetes service.
 apiVersion: v1
 kind: Service
 metadata:
@@ -10,9 +11,10 @@ metadata:
     app: ${stackname}
     tier: ${service}
 spec:
-#  ports:
-#  - port: EXTERNAL_PORT
-#    targetPort: INTERNAL_PORT
+  type: LoadBalancer   # This will create a GCE Load Balancer for you
+  ports:
+  - port: ${require("EXTERNAL_PORT")}
+    targetPort: ${require("INTERNAL_PORT")}
   selector:
     app: ${stackname}
     tier: ${service}
