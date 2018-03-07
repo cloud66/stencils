@@ -5,8 +5,8 @@ kind: Namespace
 metadata:
   name: ${formation}
   annotations:
-    cloud66.com/snapshot-uid: ${snapshot("uid")}
-    cloud66.com/snapshot-gitref: ${snapshot("gitref")}
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 ---
 apiVersion: v1
 kind: Secret
@@ -14,8 +14,8 @@ metadata:
   namespace: ${formation}
   name: cloud66-registry-pull-secret
   annotations:
-    cloud66.com/snapshot-uid: ${snapshot("uid")}
-    cloud66.com/snapshot-gitref: ${snapshot("gitref")}
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 data:
   .dockerconfigjson: ${registry_credentials()}
 type: kubernetes.io/dockerconfigjson

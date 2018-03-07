@@ -5,8 +5,8 @@ metadata:
   namespace: ${formation}
   name: ${concat(service, "-svc")}
   annotations:
-    cloud66.com/snapshot-uid: ${snapshot("uid")}
-    cloud66.com/snapshot-gitref: ${snapshot("gitref")}
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
   labels:
     app: ${stackname}
     tier: ${service}
