@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ${service}
-          image: ${concat(service["image"], ":", service["tag"])}
+          image: ${concat(repo, image(repo, "name"), ":", image(repo, "tag"))}
           ports: # Comment out this (and the line below) if don't need to expose any ports for this pod
             - containerPort: ${require("PORT")}
           command: ${require("COMMAND")}
