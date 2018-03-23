@@ -5,6 +5,7 @@ metadata:
   namespace: ${formation}
   name: redis
   annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
     cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
@@ -17,7 +18,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis
+          image: redis  
           ports:
             - containerPort: 6379
 ---
@@ -27,6 +28,7 @@ metadata:
   namespace: ${formation}
   name: redis
   annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
     cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
