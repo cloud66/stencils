@@ -44,9 +44,9 @@
 					"name": "Event Relay",
 					"filename": "event-relay.yml",
 					"template_filename": "event-relay.yml",
-					"description": "Notify when events occur",
-					"kind": "deployment",
-					"tags": ["event-relay"]
+					"description": "Notify when formations deployed",
+					"kind": "env",
+					"tags": ["config", "setup"]
 				}
 			]
 		},
