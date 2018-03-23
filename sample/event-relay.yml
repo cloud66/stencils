@@ -17,4 +17,4 @@ spec:
         imagePullPolicy: Always
         image: cloud66/k8s-event-relay:latest
         command: ["k8s-event-relay"]
-        args: ["--upstream-host=https://app.cloud66.com", "--log=STDOUT", "--log-level=info", "--api=${env("CLOUD66_ACCOUNT_KEY")}", "--ctx=${formation["uuid"]}"]
+        args: ["--upstream-host=https://app.cloud66.com", "--log=STDOUT", "--log-level=info", "--api=${env("CLOUD66_ACCOUNT_KEY")}", "--ctx=${formation["uuid"]}", "--ctx-type=formation"]
