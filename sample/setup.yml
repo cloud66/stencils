@@ -5,6 +5,7 @@ kind: Namespace
 metadata:
   name: ${formation}
   annotations:
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 ---
@@ -14,6 +15,7 @@ metadata:
   namespace: ${formation}
   name: cloud66-registry-pull-secret
   annotations:
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 data:

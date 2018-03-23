@@ -5,6 +5,7 @@ metadata:
   namespace: ${formation}
   name: redis
   annotations:
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 spec:
@@ -26,6 +27,7 @@ metadata:
   namespace: ${formation}
   name: redis
   annotations:
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
   labels:
