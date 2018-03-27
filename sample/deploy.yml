@@ -5,7 +5,7 @@ metadata:
   namespace: ${formation}
   name: ${concat(service, "-dep")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]} 
+    cloud66.com/formation-uuid: ${formation["uuid"]}
     cloud66.com/stencil-uuid: ${stencil["uuid"]}
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: ${service}
-          image: ${concat(repo, image(repo, "name"), ":", image(repo, "tag"))}
+          image: ${concat(repo, "/", image(repo, "name"), ":", image(repo, "tag"))}
           ports: # Comment out this (and the line below) if don't need to expose any ports for this pod
             - containerPort: ${require("PORT")}
           command: ${require("COMMAND")}
