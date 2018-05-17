@@ -5,6 +5,11 @@
 			"id": "sample",
 			"name": "Sample",
 			"description": "A set of sample templates"
-		}
+		},
+		{
+			"id": "foo",
+			"name": "Foo",
+			"description": "Development Foo"
+		}		
 	]
 }
