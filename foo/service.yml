@@ -1,0 +1,22 @@
+# this is a Stencil for Kubernetes service.
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ${formation}
+  name: ${concat(service, "-svc")}
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+  labels:
+    app: ${stackname}
+    tier: ${service}
+spec:
+  type: NodePort
+  ports:
+  - port: ${require("EXTERNAL_PORT")}
+    targetPort: ${require("INTERNAL_PORT")}
+  selector:
+    app: ${stackname}
+    tier: ${service}

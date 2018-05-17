@@ -1,0 +1,25 @@
+# this sets up the cluster with namepsace etc
+# should be the first yaml to run
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ${formation}
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: ${formation}
+  name: cloud66-registry-pull-secret
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+data:
+  .dockerconfigjson: ${registry_credentials()}
+type: kubernetes.io/dockerconfigjson

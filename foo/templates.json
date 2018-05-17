@@ -1,0 +1,74 @@
+{
+	"version": "v1",
+	"groups": [{
+			"name": "Service",
+			"section": "service",
+			"templates": [{
+					"name": "Service",
+					"filename": "${service}_service.yml",
+					"template_filename": "service.yml",
+					"description": "Service definition",
+					"kind": "service",
+					"tags": ["service"]
+				},
+				{
+					"name": "Deployment",
+					"filename": "${service}_deploy.yml",
+					"template_filename": "deploy.yml",
+					"description": "Deployment",
+					"kind": "service",
+					"tags": ["service"]
+				}
+			]
+		},
+		{
+			"name": "Config",
+			"section": "config",
+			"templates": [{
+					"name": "Setup",
+					"filename": "setup.yml",
+					"template_filename": "setup.yml",
+					"description": "Setup namespace, etc",
+					"kind": "env",
+					"tags": ["setup"]
+				},
+				{
+					"name": "Environments",
+					"filename": "env.yml",
+					"template_filename": "env.yml",
+					"description": "ConfigMaps",
+					"kind": "env",
+					"tags": ["config"]
+				},
+				{
+					"name": "Event Relay",
+					"filename": "event-relay.yml",
+					"template_filename": "event-relay.yml",
+					"description": "Notify when formations deployed",
+					"kind": "env",
+					"tags": ["config", "setup"]
+				}
+			]
+		},
+		{
+			"name": "Custom",
+			"section": "custom",
+			"templates": [{
+				"name": "Custom",
+				"filename": "blank.yml",
+				"template_filename": "blank.yml",
+				"description": "Blank custom file",
+				"kind": "custom",
+				"tags": []
+			},
+			{
+				"name": "Redis",
+				"filename": "redis.yml",
+				"template_filename": "redis.yml",
+				"description": "Basic Redis",
+				"kind": "custom",
+				"tags": ["service"]
+			}]
+		}
+	]
+}

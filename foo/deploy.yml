@@ -1,0 +1,26 @@
+# this is a Stencil for Kubernetes deployments
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: ${formation}
+  name: ${concat(service, "-dep")}
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+spec:
+  template:
+    metadata:
+      labels: # be careful changing labels. It can break your deployment
+        app: ${stackname}
+        tier: ${service}
+    spec:
+      containers:
+        - name: ${service}
+          image: ${concat(repo, "/", image(repo, "name"), ":", image(repo, "tag"))}
+          ports: # Comment out this (and the line below) if don't need to expose any ports for this pod
+            - containerPort: ${require("PORT")}
+          command: ${require("COMMAND")}
+      imagePullSecrets:
+      - name: cloud66-registry-pull-secret
