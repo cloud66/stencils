@@ -20,6 +20,15 @@
 			"preferred_sequence": 1
 		},
 		{
+			"name": "Deployment (Protected)",
+			"filename_pattern": "${service}_deploy.yml",
+			"filename": "deploy-auther.yml",
+			"description": "Defines a deployment with auther sidecar",
+			"context_type": "service",
+			"tags": ["deployment"],
+			"preferred_sequence": 1
+		},
+		{
 			"name": "Setup",
 			"filename_pattern": "setup.yml",
 			"filename": "setup.yml",
