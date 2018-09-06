@@ -19,10 +19,9 @@ spec:
       containers:
         - name: ${service}
           image: ${concat(repo, "/", image(repo, "name"), ":", image(repo, "tag"))}
-          command: ["/go/src/helloworld/helloworld", "--binding", "127.0.0.1:5001"]
+          command: ["/go/src/helloworld/helloworld", "--binding", "127.0.0.1:${require(\"APP_PORT\")}"]
           ports: # Comment out this (and the line below) if don't need to expose any ports for this pod
             - containerPort: ${require("APP_PORT")}
-          command: ${require("COMMAND")}
         - name: web-auther
           image: cloud66/auther:latest
           command: ["/go/src/auther/auther", "--port", "${require(\"PORT\")}", "--backend-port", "${require(\"APP_PORT\")}"]
