@@ -11,6 +11,15 @@
 			"preferred_sequence": 2
 		},
 		{
+			"name": "All in One",
+			"filename_pattern": "all-in-one.yml",
+			"filename": "all-in-one.yml",
+			"description": "Single Service all in one configuration",
+			"context_type": "service",
+			"tags": ["service", "demo"],
+			"preferred_sequence": 1
+		},
+		{
 			"name": "Deployment",
 			"filename_pattern": "${service}_deploy.yml",
 			"filename": "deploy.yml",
