@@ -47,6 +47,15 @@
 			"preferred_sequence": -9999
 		},
 		{
+			"name": "Auther Sidecar",
+			"filename_pattern": "_auther.yml",
+			"filename": "_auther.yml",
+			"description": "Auther Sidecar deployment",
+			"context_type": "service",
+			"tags": ["deployment", "sidecar"],
+			"preferred_sequence": -9995
+		},
+		{
 			"name": "Redis",
 			"filename_pattern": "redis.yml",
 			"filename": "redis.yml",
