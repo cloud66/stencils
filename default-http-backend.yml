@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: kube-system
+  namespace: ${formation}
   name: default-http-backend
   labels:
     k8s-app: default-http-backend
@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: kube-system
+  namespace: ${formation}
   name: default-http-backend
   labels:
     k8s-app: default-http-backend
