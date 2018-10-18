@@ -42,7 +42,7 @@
 		{
 			"name": "No Port in Services",
 			"filename_pattern": "no-port-for-services-num.cop",
-			"filename": "no-port-num.yml",
+			"filename": "no-port-num.cop",
 			"description": "Block a port",
 			"Selector": "kind: Service",
 			"tags": []

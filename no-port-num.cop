@@ -1,0 +1,3 @@
+rule NoPort5000 ensure {
+    fetch("$.spec.ports[?(@.port == 80)].targetPort").first == 5000
+}
