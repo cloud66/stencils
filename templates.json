@@ -44,7 +44,7 @@
 			"filename_pattern": "no-port-for-services-num.cop",
 			"filename": "no-port-num.cop",
 			"description": "Block a port",
-			"Selector": "kind: Service",
+			"selector": "kind: Service",
 			"tags": []
 		},
 		{
@@ -52,7 +52,7 @@
 			"filename_pattern": "blank.cop",
 			"filename": "blank.cop",
 			"description": "Blank custom file",
-			"Selector": "Stack",
+			"selector": "Stack",
 			"tags": []
 		}
 	]
