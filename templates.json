@@ -11,33 +11,6 @@
 			"preferred_sequence": 2
 		},
 		{
-			"name": "All in One",
-			"filename_pattern": "all-in-one.yml",
-			"filename": "all-in-one.yml",
-			"description": "Single Service all in one configuration",
-			"context_type": "service",
-			"tags": ["service", "demo"],
-			"preferred_sequence": 1
-		},
-		{
-			"name": "Deployment",
-			"filename_pattern": "${service}_deploy.yml",
-			"filename": "deploy.yml",
-			"description": "Defines a deployment",
-			"context_type": "service",
-			"tags": ["deployment"],
-			"preferred_sequence": 1
-		},
-		{
-			"name": "Deployment (Protected)",
-			"filename_pattern": "${service}_deploy.yml",
-			"filename": "deploy-auther.yml",
-			"description": "Defines a deployment with auther sidecar",
-			"context_type": "service",
-			"tags": ["deployment"],
-			"preferred_sequence": 1
-		},
-		{
 			"name": "Setup",
 			"filename_pattern": "setup.yml",
 			"filename": "setup.yml",
@@ -47,40 +20,13 @@
 			"preferred_sequence": -9999
 		},
 		{
-			"name": "Auther Sidecar",
-			"filename_pattern": "_auther.yml",
-			"filename": "_auther.yml",
-			"description": "Auther Sidecar deployment",
-			"context_type": "service",
-			"tags": ["deployment", "sidecar"],
-			"preferred_sequence": -9995
-		},
-		{
-			"name": "Redis",
-			"filename_pattern": "redis.yml",
-			"filename": "redis.yml",
-			"description": "Redis as a service",
+			"name": "Default HTTP Backend",
+			"filename_pattern": "default-http-backend.yml",
+			"filename": "default-http-backend.yml",
+			"description": "Default HTTP Backend",
 			"context_type": "stack",
-			"tags": ["services", "redis", "local"],
-			"preferred_sequence": -9993
-		},
-		{
-			"name": "Secrets",
-			"filename_pattern": "secrets.yml",
-			"filename": "secrets.yml",
-			"description": "Adding Secrets from Vault",
-			"context_type": "stack",
-			"tags": ["config"],
-			"preferred_sequence": -9994
-		},
-		{
-			"name": "Event Relay",
-			"filename_pattern": "event-relay.yml",
-			"filename": "event-relay.yml",
-			"description": "Notify when formations deployed",
-			"context_type": "stack",
-			"tags": ["config", "setup"],
-			"preferred_sequence": -9996
+			"tags": ["setup", "config"],
+			"preferred_sequence": -9997
 		},
 		{
 			"name": "Custom",
