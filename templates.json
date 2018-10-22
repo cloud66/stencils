@@ -1,6 +1,6 @@
 {
 	"version": "v1",
-	"stencils": [
+	"templates": [
 		{
 			"name": "Service",
 			"filename_pattern": "${service}_service.yml",
@@ -45,7 +45,8 @@
 			"filename": "no-port-num.cop",
 			"description": "Block a port",
 			"selector": "kind: Service",
-			"tags": []
+			"tags": [],
+			"preferred_sequence": 0
 		},
 		{
 			"name": "Custom",
@@ -53,7 +54,8 @@
 			"filename": "blank.cop",
 			"description": "Blank custom file",
 			"selector": "Stack",
-			"tags": []
+			"tags": [],
+			"preferred_sequence": 9998
 		}
 	]
 }
