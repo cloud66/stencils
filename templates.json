@@ -4,7 +4,7 @@
 		{
 			"name": "Service",
 			"filename_pattern": "${service}_service.yml",
-			"filename": "stenciles/service.yml",
+			"filename": "stencils/service.yml",
 			"description": "Defines a service",
 			"context_type": "service",
 			"tags": ["service"],
@@ -13,7 +13,7 @@
 		{
 			"name": "Setup",
 			"filename_pattern": "setup.yml",
-			"filename": "stenciles/setup.yml",
+			"filename": "stencils/setup.yml",
 			"description": "Setup namespace, etc",
 			"context_type": "stack",
 			"tags": ["setup"],
@@ -22,7 +22,7 @@
 		{
 			"name": "Default HTTP Backend",
 			"filename_pattern": "default-http-backend.yml",
-			"filename": "stenciles/default-http-backend.yml",
+			"filename": "stencils/default-http-backend.yml",
 			"description": "Default HTTP Backend",
 			"context_type": "stack",
 			"tags": ["setup", "config"],
@@ -31,7 +31,7 @@
 		{
 			"name": "Custom",
 			"filename_pattern": "blank.yml",
-			"filename": "stenciles/blank.yml",
+			"filename": "stencils/blank.yml",
 			"description": "Blank custom file",
 			"context_type": "stack",
 			"tags": [],
