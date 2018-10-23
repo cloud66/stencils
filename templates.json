@@ -11,15 +11,6 @@
 			"preferred_sequence": 2
 		},
 		{
-			"name": "Setup",
-			"filename_pattern": "setup.yml",
-			"filename": "setup.yml",
-			"description": "Setup namespace, etc",
-			"context_type": "stack",
-			"tags": ["setup"],
-			"preferred_sequence": -9999
-		},
-		{
 			"name": "Default HTTP Backend",
 			"filename_pattern": "default-http-backend.yml",
 			"filename": "default-http-backend.yml",
