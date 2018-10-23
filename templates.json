@@ -88,7 +88,7 @@
 			"name": "No Default Namespace",
 			"filename_pattern": "no-default-namespace.cop",
 			"filename": "policies/no-default-namespace.cop",
-			"description": "Namespace is available and not default",git
+			"description": "Namespace is available and not default",
 			"selector": "",
 			"tags": [],
 			"preferred_sequence": 5
