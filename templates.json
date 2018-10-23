@@ -40,7 +40,7 @@
 	],
 	"policies": [
 		{
-			"name": "No Port in Services",
+			"name": "NoPortInServices",
 			"filename_pattern": "no-port-for-services.cop",
 			"filename": "policies/no-port-num.cop",
 			"description": "Block a port",
@@ -49,7 +49,7 @@
 			"preferred_sequence": 0
 		},
 		{
-			"name": "No Latest in Image Tag",
+			"name": "NoLatestInImageTag",
 			"filename_pattern": "no-latest-image.cop",
 			"filename": "policies/no-latest-image.cop",
 			"description": "Ban use of latest as image tag",
@@ -58,7 +58,7 @@
 			"preferred_sequence": 1
 		},
 		{
-			"name": "MySQL Version Check",
+			"name": "MySQLVersionCheck",
 			"filename_pattern": "only-minor-upgrades.cop",
 			"filename": "policies/only-minor-upgrades.cop",
 			"description": "Only allow minor version upgrades",
@@ -67,7 +67,7 @@
 			"preferred_sequence": 2
 		},
 		{
-			"name": "Deployment Filename Policy",
+			"name": "DeploymentFilenamePolicy",
 			"filename_pattern": "filename-policy.cop",
 			"filename": "policies/filename-policy.cop",
 			"description": "Enforce filename policies",
@@ -76,7 +76,7 @@
 			"preferred_sequence": 3
 		},
 		{
-			"name": "LoadBalancer Ip in Range",
+			"name": "LoadBalancerIpinRange",
 			"filename_pattern": "lb-in-range.cop",
 			"filename": "policies/lb-in-range.cop",
 			"description": "Load Balancer IP is within the range",
@@ -85,7 +85,7 @@
 			"preferred_sequence": 4
 		},
 		{
-			"name": "No Default Namespace",
+			"name": "NoDefaultNamespace",
 			"filename_pattern": "no-default-namespace.cop",
 			"filename": "policies/no-default-namespace.cop",
 			"description": "Namespace is available and not default",
@@ -94,7 +94,7 @@
 			"preferred_sequence": 5
 		},
 		{
-			"name": "No DockerHub",
+			"name": "NoDockerHub",
 			"filename_pattern": "no-dockerhub.cop",
 			"filename": "policies/no-dockerhub.cop",
 			"description": "No DockerHub images",
@@ -103,7 +103,7 @@
 			"preferred_sequence": 6
 		},
 		{
-			"name": "only-from-private-repo",
+			"name": "OnlyFromPrivateRepo",
 			"filename_pattern": "only-private-repo.cop",
 			"filename": "policies/only-private-repo.cop",
 			"description": "Only pull images from our private registry",
