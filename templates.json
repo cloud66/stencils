@@ -4,7 +4,7 @@
 		{
 			"name": "Service",
 			"filename_pattern": "${service}_service.yml",
-			"filename": "service.yml",
+			"filename": "stenciles/service.yml",
 			"description": "Defines a service",
 			"context_type": "service",
 			"tags": ["service"],
@@ -13,7 +13,7 @@
 		{
 			"name": "Setup",
 			"filename_pattern": "setup.yml",
-			"filename": "setup.yml",
+			"filename": "stenciles/setup.yml",
 			"description": "Setup namespace, etc",
 			"context_type": "stack",
 			"tags": ["setup"],
@@ -22,7 +22,7 @@
 		{
 			"name": "Default HTTP Backend",
 			"filename_pattern": "default-http-backend.yml",
-			"filename": "default-http-backend.yml",
+			"filename": "stenciles/default-http-backend.yml",
 			"description": "Default HTTP Backend",
 			"context_type": "stack",
 			"tags": ["setup", "config"],
@@ -31,7 +31,7 @@
 		{
 			"name": "Custom",
 			"filename_pattern": "blank.yml",
-			"filename": "blank.yml",
+			"filename": "stenciles/blank.yml",
 			"description": "Blank custom file",
 			"context_type": "stack",
 			"tags": [],
@@ -42,7 +42,7 @@
 		{
 			"name": "No Port in Services",
 			"filename_pattern": "no-port-for-services.cop",
-			"filename": "no-port-num.cop",
+			"filename": "policies/no-port-num.cop",
 			"description": "Block a port",
 			"selector": "kind: Service",
 			"tags": [],
@@ -51,7 +51,7 @@
 		{
 			"name": "No Latest in Image Tag",
 			"filename_pattern": "no-latest-image.cop",
-			"filename": "no-latest-image.cop",
+			"filename": "policies/no-latest-image.cop",
 			"description": "Ban use of latest as image tag",
 			"selector": "kind: Deployment",
 			"tags": [],
@@ -60,7 +60,7 @@
 		{
 			"name": "MySQL Version Check",
 			"filename_pattern": "only-minor-upgrades.cop",
-			"filename": "only-minor-upgrades.cop",
+			"filename": "policies/only-minor-upgrades.cop",
 			"description": "Only allow minor version upgrades",
 			"selector": "kind: Deployment",
 			"tags": [],
@@ -69,7 +69,7 @@
 		{
 			"name": "Deployment Filename Policy",
 			"filename_pattern": "filename-policy.cop",
-			"filename": "filename-policy.cop",
+			"filename": "policies/filename-policy.cop",
 			"description": "Enforce filename policies",
 			"selector": "",
 			"tags": [],
@@ -78,7 +78,7 @@
 		{
 			"name": "LoadBalancer Ip in Range",
 			"filename_pattern": "lb-in-range.cop",
-			"filename": "lb-in-range.cop",
+			"filename": "policies/lb-in-range.cop",
 			"description": "Load Balancer IP is within the range",
 			"selector": "kind: Service",
 			"tags": [],
@@ -87,8 +87,8 @@
 		{
 			"name": "No Default Namespace",
 			"filename_pattern": "no-default-namespace.cop",
-			"filename": "no-default-namespace.cop",
-			"description": "Namespace is available and not default",
+			"filename": "policies/no-default-namespace.cop",
+			"description": "Namespace is available and not default",git
 			"selector": "",
 			"tags": [],
 			"preferred_sequence": 5
@@ -96,7 +96,7 @@
 		{
 			"name": "No DockerHub",
 			"filename_pattern": "no-dockerhub.cop",
-			"filename": "no-dockerhub.cop",
+			"filename": "policies/no-dockerhub.cop",
 			"description": "No DockerHub images",
 			"selector": "kind: Deployment",
 			"tags": [],
@@ -105,7 +105,7 @@
 		{
 			"name": "only-from-private-repo",
 			"filename_pattern": "only-private-repo.cop",
-			"filename": "only-private-repo.cop",
+			"filename": "policies/only-private-repo.cop",
 			"description": "Only pull images from our private registry",
 			"selector": "kind: Deployment",
 			"tags": [],
@@ -114,7 +114,7 @@
 		{
 			"name": "Custom",
 			"filename_pattern": "blank.cop",
-			"filename": "blank.cop",
+			"filename": "policies/blank.cop",
 			"description": "Blank custom file",
 			"selector": "",
 			"tags": [],
