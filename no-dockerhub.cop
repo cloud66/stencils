@@ -1,0 +1,6 @@
+rule NoDockerHub ensure {
+    fetch("$.spec.template.spec.containers..image")
+        .as(:image)
+        .pick(:registry)
+        .contains("index.docker.io") == false
+}

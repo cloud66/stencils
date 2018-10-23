@@ -1,0 +1,8 @@
+rule MySQLVersionCheck ensure {
+    fetch("$.spec.template.spec.containers[?(@.name == 'mysql')].image")
+        .first
+        .as(:image)
+        .pick(:tag)
+        .as(:semver)
+        .satisfies("~> 5.6") == true
+}

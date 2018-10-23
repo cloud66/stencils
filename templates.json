@@ -41,7 +41,7 @@
 	"policies": [
 		{
 			"name": "No Port in Services",
-			"filename_pattern": "no-port-for-services-num.cop",
+			"filename_pattern": "no-port-for-services.cop",
 			"filename": "no-port-num.cop",
 			"description": "Block a port",
 			"selector": "kind: Service",
@@ -49,11 +49,74 @@
 			"preferred_sequence": 0
 		},
 		{
+			"name": "No Latest in Image Tag",
+			"filename_pattern": "no-latest-image.cop",
+			"filename": "no-latest-image.cop",
+			"description": "Ban use of latest as image tag",
+			"selector": "kind: Deployment",
+			"tags": [],
+			"preferred_sequence": 1
+		},
+		{
+			"name": "MySQL Version Check",
+			"filename_pattern": "only-minor-upgrades.cop",
+			"filename": "only-minor-upgrades.cop",
+			"description": "Only allow minor version upgrades",
+			"selector": "kind: Deployment",
+			"tags": [],
+			"preferred_sequence": 2
+		},
+		{
+			"name": "Deployment Filename Policy",
+			"filename_pattern": "filename-policy.cop",
+			"filename": "filename-policy.cop",
+			"description": "Enforce filename policies",
+			"selector": "",
+			"tags": [],
+			"preferred_sequence": 3
+		},
+		{
+			"name": "LoadBalancer Ip in Range",
+			"filename_pattern": "lb-in-range.cop",
+			"filename": "lb-in-range.cop",
+			"description": "Load Balancer IP is within the range",
+			"selector": "kind: Service",
+			"tags": [],
+			"preferred_sequence": 4
+		},
+		{
+			"name": "No Default Namespace",
+			"filename_pattern": "no-default-namespace.cop",
+			"filename": "no-default-namespace.cop",
+			"description": "Namespace is available and not default",
+			"selector": "",
+			"tags": [],
+			"preferred_sequence": 5
+		},
+		{
+			"name": "No DockerHub",
+			"filename_pattern": "no-dockerhub.cop",
+			"filename": "no-dockerhub.cop",
+			"description": "No DockerHub images",
+			"selector": "kind: Deployment",
+			"tags": [],
+			"preferred_sequence": 6
+		},
+		{
+			"name": "only-from-private-repo",
+			"filename_pattern": "only-private-repo.cop",
+			"filename": "only-private-repo.cop",
+			"description": "Only pull images from our private registry",
+			"selector": "kind: Deployment",
+			"tags": [],
+			"preferred_sequence": 7
+		},
+		{
 			"name": "Custom",
 			"filename_pattern": "blank.cop",
 			"filename": "blank.cop",
 			"description": "Blank custom file",
-			"selector": "Stack",
+			"selector": "",
 			"tags": [],
 			"preferred_sequence": 9998
 		}
