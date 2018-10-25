@@ -46,7 +46,7 @@
 			"description": "Block a port",
 			"selector": "kind: Service",
 			"tags": [],
-			"preferred_sequence": 0
+			"preferred_sequence": 9990
 		},
 		{
 			"name": "NoLatestInImageTag",
@@ -55,7 +55,7 @@
 			"description": "Ban use of latest as image tag",
 			"selector": "kind: Deployment",
 			"tags": [],
-			"preferred_sequence": 1
+			"preferred_sequence": 9991
 		},
 		{
 			"name": "MySQLVersionCheck",
@@ -64,7 +64,7 @@
 			"description": "Only allow minor version upgrades",
 			"selector": "kind: Deployment",
 			"tags": [],
-			"preferred_sequence": 2
+			"preferred_sequence": 9992
 		},
 		{
 			"name": "DeploymentFilenamePolicy",
@@ -73,7 +73,7 @@
 			"description": "Enforce filename policies",
 			"selector": "",
 			"tags": [],
-			"preferred_sequence": 3
+			"preferred_sequence": 9993
 		},
 		{
 			"name": "LoadBalancerIpinRange",
@@ -82,7 +82,7 @@
 			"description": "Load Balancer IP is within the range",
 			"selector": "kind: Service",
 			"tags": [],
-			"preferred_sequence": 4
+			"preferred_sequence": 9994
 		},
 		{
 			"name": "NoDefaultNamespace",
@@ -91,7 +91,7 @@
 			"description": "Namespace is available and not default",
 			"selector": "",
 			"tags": [],
-			"preferred_sequence": 5
+			"preferred_sequence": 9995
 		},
 		{
 			"name": "NoDockerHub",
@@ -100,7 +100,7 @@
 			"description": "No DockerHub images",
 			"selector": "kind: Deployment",
 			"tags": [],
-			"preferred_sequence": 6
+			"preferred_sequence": 9996
 		},
 		{
 			"name": "OnlyFromPrivateRepo",
@@ -109,7 +109,7 @@
 			"description": "Only pull images from our private registry",
 			"selector": "kind: Deployment",
 			"tags": [],
-			"preferred_sequence": 7
+			"preferred_sequence": 9997
 		},
 		{
 			"name": "Custom",
