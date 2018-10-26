@@ -67,15 +67,6 @@
 			"preferred_sequence": 9992
 		},
 		{
-			"name": "noFile",
-			"filename_pattern": "somefile.cop",
-			"filename": "",
-			"description": "nofiles",
-			"selector": "kind:",
-			"tags": [],
-			"preferred_sequence": 10000
-		},
-		{
 			"name": "DeploymentFilenamePolicy",
 			"filename_pattern": "filename-policy.cop",
 			"filename": "policies/filename-policy.cop",
