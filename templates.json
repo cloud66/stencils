@@ -40,10 +40,10 @@
 	],
 	"policies": [
 		{
-			"name": "NoPortInServices",
-			"filename_pattern": "no-port-for-services.cop",
-			"filename": "policies/no-port-num.cop",
-			"description": "Block a port",
+			"name": "NoPort5000",
+			"filename_pattern": "no-port-5000.cop",
+			"filename": "policies/no-port-5000.cop",
+			"description": "Block the port 5000 for the services",
 			"selector": "kind: Service",
 			"tags": [],
 			"preferred_sequence": 9990
