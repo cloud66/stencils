@@ -40,8 +40,7 @@
 	],
 	"policies": [
 		{
-			"name": "NoPort5000",
-			"filename_pattern": "no-port-5000.cop",
+			"name": "NoPort5000"
 			"filename": "policies/no-port-5000.cop",
 			"description": "Block the port 5000 for the services",
 			"selector": "kind: Service",
@@ -50,7 +49,6 @@
 		},
 		{
 			"name": "NoLatestInImageTag",
-			"filename_pattern": "no-latest-image.cop",
 			"filename": "policies/no-latest-image.cop",
 			"description": "Ban use of latest as image tag",
 			"selector": "kind: Deployment",
@@ -59,7 +57,6 @@
 		},
 		{
 			"name": "MySQLVersionCheck",
-			"filename_pattern": "only-minor-upgrades.cop",
 			"filename": "policies/only-minor-upgrades.cop",
 			"description": "Only allow minor version upgrades",
 			"selector": "kind: Deployment",
@@ -68,7 +65,6 @@
 		},
 		{
 			"name": "DeploymentFilenamePolicy",
-			"filename_pattern": "filename-policy.cop",
 			"filename": "policies/filename-policy.cop",
 			"description": "Enforce filename policies",
 			"selector": "",
@@ -86,7 +82,6 @@
 		},
 		{
 			"name": "NoDefaultNamespace",
-			"filename_pattern": "no-default-namespace.cop",
 			"filename": "policies/no-default-namespace.cop",
 			"description": "Namespace is available and not default",
 			"selector": "",
@@ -95,7 +90,6 @@
 		},
 		{
 			"name": "NoDockerHub",
-			"filename_pattern": "no-dockerhub.cop",
 			"filename": "policies/no-dockerhub.cop",
 			"description": "No DockerHub images",
 			"selector": "kind: Deployment",
@@ -104,7 +98,6 @@
 		},
 		{
 			"name": "OnlyFromPrivateRepo",
-			"filename_pattern": "only-private-repo.cop",
 			"filename": "policies/only-private-repo.cop",
 			"description": "Only pull images from our private registry",
 			"selector": "kind: Deployment",
@@ -113,7 +106,6 @@
 		},
 		{
 			"name": "Custom",
-			"filename_pattern": "blank.cop",
 			"filename": "policies/blank.cop",
 			"description": "Blank custom file",
 			"selector": "",
