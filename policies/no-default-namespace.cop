@@ -1,3 +1,0 @@
-rule NoDefaultNamespace ensure {
-    fetch("$.metadata.namespace").first == "foobar"
-}

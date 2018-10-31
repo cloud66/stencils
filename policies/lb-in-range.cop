@@ -1,5 +1,0 @@
-rule LoadBalancerIPInRange ensure {
-    fetch("$.spec[?(@['type'] == 'LoadBalancer')].loadBalancerIP")
-        .first
-        .as(:ipaddress) in ipaddress("232.12.87.0/24")
-}

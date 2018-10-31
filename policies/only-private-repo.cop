@@ -1,7 +1,0 @@
-rule PrivateRepoOnly ensure {
-    fetch("$.spec.template.spec.containers..image")
-        .as(:image)
-        .pick(:name)
-        .extract("(.*)\/.*", 1) // image name is in the namespace/name format
-        .unique == ["acme"]
-}

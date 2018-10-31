@@ -1,6 +1,0 @@
-rule NoLatest ensure {
-    fetch("$.spec.template.spec.containers..image")
-        .as(:image)
-        .pick(:tag)
-        .contains("latest") == false
-}
