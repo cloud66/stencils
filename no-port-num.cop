@@ -1,4 +1,0 @@
-var noport = 5000
-rule NoPort5000 ensure {
-    fetch("$.spec.ports[?(@.port == 80)].targetPort").first == noport
-}
