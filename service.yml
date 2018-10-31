@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ${formation}
+  name: ${service}
+  labels:
+    app: ${stackname}
+    service: ${service}
+spec:
+  type: ClusterIP
+  ports:
+  - port: ${require("ext_port")}
+    targetPort: ${require("int_port")}
+  selector:
+    app: ${stackname}
+    service: ${service}

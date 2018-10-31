@@ -1,0 +1,41 @@
+{
+	"version": "v1",
+	"templates": [
+		{
+			"name": "Service",
+			"filename_pattern": "${service}_service.yml",
+			"filename": "service.yml",
+			"description": "Defines a service",
+			"context_type": "service",
+			"tags": ["service"],
+			"preferred_sequence": 2
+		},
+		{
+			"name": "Setup",
+			"filename_pattern": "setup.yml",
+			"filename": "setup.yml",
+			"description": "Setup namespace, etc",
+			"context_type": "stack",
+			"tags": ["setup"],
+			"preferred_sequence": -9999
+		},
+		{
+			"name": "Default HTTP Backend",
+			"filename_pattern": "default-http-backend.yml",
+			"filename": "default-http-backend.yml",
+			"description": "Default HTTP Backend",
+			"context_type": "stack",
+			"tags": ["setup", "config"],
+			"preferred_sequence": -9997
+		},
+		{
+			"name": "Custom",
+			"filename_pattern": "blank.yml",
+			"filename": "blank.yml",
+			"description": "Blank custom file",
+			"context_type": "stack",
+			"tags": [],
+			"preferred_sequence": 9998
+		}
+	]
+}
