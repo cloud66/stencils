@@ -2,7 +2,7 @@
 	"version": "v1",
 	"public": true,
 	"name": "stencils",
-	"icon": "skycap-logo",
+	"icon": "https://assets.cloud66.com/public/cloud66-logo-skycap.svg",
 	"long_name": "General Base Template Repository",
 	"description": "Default Base Template Repository",
 	"templates": {
