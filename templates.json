@@ -1,95 +1,134 @@
 {
 	"version": "v1",
-	"templates": [
-		{
-			"name": "Service",
-			"filename_pattern": "${service}_service.yml",
-			"filename": "service.yml",
-			"description": "Defines a service",
-			"context_type": "service",
-			"tags": ["service"],
-			"preferred_sequence": 2
-		},
-		{
-			"name": "All in One",
-			"filename_pattern": "all-in-one.yml",
-			"filename": "all-in-one.yml",
-			"description": "Single Service all in one configuration",
-			"context_type": "service",
-			"tags": ["service", "demo"],
-			"preferred_sequence": 1
-		},
-		{
-			"name": "Deployment",
-			"filename_pattern": "${service}_deploy.yml",
-			"filename": "deploy.yml",
-			"description": "Defines a deployment",
-			"context_type": "service",
-			"tags": ["deployment"],
-			"preferred_sequence": 1
-		},
-		{
-			"name": "Deployment (Protected)",
-			"filename_pattern": "${service}_deploy.yml",
-			"filename": "deploy-auther.yml",
-			"description": "Defines a deployment with auther sidecar",
-			"context_type": "service",
-			"tags": ["deployment"],
-			"preferred_sequence": 1
-		},
-		{
-			"name": "Setup",
-			"filename_pattern": "setup.yml",
-			"filename": "setup.yml",
-			"description": "Setup namespace, etc",
-			"context_type": "stack",
-			"tags": ["setup"],
-			"preferred_sequence": -9999
-		},
-		{
-			"name": "Auther Sidecar",
-			"filename_pattern": "_auther.yml",
-			"filename": "_auther.yml",
-			"description": "Auther Sidecar deployment",
-			"context_type": "service",
-			"tags": ["deployment", "sidecar"],
-			"preferred_sequence": -9995
-		},
-		{
-			"name": "Redis",
-			"filename_pattern": "redis.yml",
-			"filename": "redis.yml",
-			"description": "Redis as a service",
-			"context_type": "stack",
-			"tags": ["services", "redis", "local"],
-			"preferred_sequence": -9993
-		},
-		{
-			"name": "Secrets",
-			"filename_pattern": "secrets.yml",
-			"filename": "secrets.yml",
-			"description": "Adding Secrets from Vault",
-			"context_type": "stack",
-			"tags": ["config"],
-			"preferred_sequence": -9994
-		},
-		{
-			"name": "Event Relay",
-			"filename_pattern": "event-relay.yml",
-			"filename": "event-relay.yml",
-			"description": "Notify when formations deployed",
-			"context_type": "stack",
-			"tags": ["config", "setup"],
-			"preferred_sequence": -9996
-		},
-		{
-			"name": "Custom",
-			"filename_pattern": "blank.yml",
-			"filename": "blank.yml",
-			"description": "Blank custom file",
-			"context_type": "stack",
-			"tags": [],
-			"preferred_sequence": 9998
-		}
-	]
+	"public": true,
+	"name": "stencils",
+	"icon": "https://assets.cloud66.com/public/cloud66-logo-skycap.svg",
+	"long_name": "General Base Template Repository",
+	"description": "Default Base Template Repository",
+	"templates": {
+		"stencils": [
+			{
+				"name": "Service",
+				"filename_pattern": "${service}_service.yml",
+				"filename": "service.yml",
+				"description": "Defines a service",
+				"context_type": "service",
+				"tags": ["service"],
+				"preferred_sequence": 2,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
+			{
+				"name": "All in One",
+				"filename_pattern": "all-in-one.yml",
+				"filename": "all-in-one.yml",
+				"description": "Single Service all in one configuration",
+				"context_type": "service",
+				"tags": ["service", "demo"],
+				"preferred_sequence": 1,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 1
+			},
+			{
+				"name": "Deployment",
+				"filename_pattern": "${service}_deploy.yml",
+				"filename": "deploy.yml",
+				"description": "Defines a deployment",
+				"context_type": "service",
+				"tags": ["deployment"],
+				"preferred_sequence": 1,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
+			{
+				"name": "Deployment (Protected)",
+				"filename_pattern": "${service}_deploy.yml",
+				"filename": "deploy-auther.yml",
+				"description": "Defines a deployment with auther sidecar",
+				"context_type": "service",
+				"tags": ["deployment"],
+				"preferred_sequence": 1,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Setup",
+				"filename_pattern": "setup.yml",
+				"filename": "setup.yml",
+				"description": "Setup namespace, etc",
+				"context_type": "stack",
+				"tags": ["setup"],
+				"preferred_sequence": -9999,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "Auther Sidecar",
+				"filename_pattern": "_auther.yml",
+				"filename": "_auther.yml",
+				"description": "Auther Sidecar deployment",
+				"context_type": "service",
+				"tags": ["deployment", "sidecar"],
+				"preferred_sequence": -9995,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Redis",
+				"filename_pattern": "redis.yml",
+				"filename": "redis.yml",
+				"description": "Redis as a service",
+				"context_type": "stack",
+				"tags": ["services", "redis", "local"],
+				"preferred_sequence": -9993,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Secrets",
+				"filename_pattern": "secrets.yml",
+				"filename": "secrets.yml",
+				"description": "Adding Secrets from Vault",
+				"context_type": "stack",
+				"tags": ["config"],
+				"preferred_sequence": -9994,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Event Relay",
+				"filename_pattern": "event-relay.yml",
+				"filename": "event-relay.yml",
+				"description": "Notify when formations deployed",
+				"context_type": "stack",
+				"tags": ["config", "setup"],
+				"preferred_sequence": -9996,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Custom",
+				"filename_pattern": "blank.yml",
+				"filename": "blank.yml",
+				"description": "Blank custom file",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": 9998,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			}
+		],
+		"policies": [],
+		"transformers": []
+	}
 }
