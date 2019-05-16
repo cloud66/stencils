@@ -1,5 +1,11 @@
 # this sets up the cluster with namepsace etc
 # should be the first yaml to run
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: c66-system
+---
 apiVersion: v1
 kind: Namespace
 metadata:
