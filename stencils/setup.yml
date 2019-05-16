@@ -29,3 +29,12 @@ metadata:
 data:
   .dockerconfigjson: ${registry_credentials()}
 type: kubernetes.io/dockerconfigjson
+---
+kind: Secret
+apiVersion: v1
+type: Opaque
+metadata:
+  namespace: ${formation}
+  name: account-secrets
+stringData:
+  api.key: ${account["api_key"]}
