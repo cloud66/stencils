@@ -2,9 +2,8 @@
 	"version": "v1",
 	"public": true,
 	"name": "general-cloud66",
-	"icon": "https://assets.cloud66.com/public/cloud66-logo-skycap.svg",
 	"long_name": "General Cloud 66 Base Template Repository",
-	"description": "Default Base Template Repository with the general stencils for our customer to get started with Skycap",
+	"description": "Default Base Template Repository with the general stencils for our customers to get started with Skycap",
 	"templates": {
 		"stencils": [
 			{
