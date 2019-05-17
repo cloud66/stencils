@@ -1,12 +1,23 @@
 {
 	"version": "v1",
 	"public": true,
-	"name": "stencils",
-	"icon": "https://assets.cloud66.com/public/cloud66-logo-skycap.svg",
-	"long_name": "General Base Template Repository",
-	"description": "Default Base Template Repository",
+	"name": "general-cloud66",
+	"long_name": "General Cloud 66 Base Template Repository",
+	"description": "Default Base Template Repository with the general stencils for our customers to get started with Skycap",
 	"templates": {
 		"stencils": [
+			{
+				"name": "Ingress",
+				"filename_pattern": "${service}_ingress.yml",
+				"filename": "ingress.yml",
+				"description": "Defines an ingress",
+				"context_type": "service",
+				"tags": ["ingress"],
+				"preferred_sequence": 3,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
 			{
 				"name": "Service",
 				"filename_pattern": "${service}_service.yml",
@@ -63,6 +74,30 @@
 				"context_type": "stack",
 				"tags": ["setup"],
 				"preferred_sequence": -9999,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "ExternalDNS",
+				"filename_pattern": "external_dns.yml",
+				"filename": "external_dns.yml",
+				"description": "ExternalDNS setup with Cloud 66 ZoneDNS",
+				"context_type": "stack",
+				"tags": ["external-dns"],
+				"preferred_sequence": -9998,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "cert-manager",
+				"filename_pattern": "cert_manager.yml",
+				"filename": "cert_manager.yml",
+				"description": "Kubernetes cert-manager setup",
+				"context_type": "stack",
+				"tags": ["cert-manager"],
+				"preferred_sequence": -9997,
 				"suggested": true,
 				"min_usage": 1,
 				"max_usage": 1
@@ -129,6 +164,6 @@
 			}
 		],
 		"policies": [],
-		"transformers": []
+		"transformations": []
 	}
 }
