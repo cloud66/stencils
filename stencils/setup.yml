@@ -1,5 +1,11 @@
 # this sets up the cluster with namepsace etc
 # should be the first yaml to run
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: c66-system
+---
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -23,3 +29,12 @@ metadata:
 data:
   .dockerconfigjson: ${registry_credentials()}
 type: kubernetes.io/dockerconfigjson
+---
+kind: Secret
+apiVersion: v1
+type: Opaque
+metadata:
+  namespace: ${formation}
+  name: account-secrets
+stringData:
+  api.key: ${account["api_key"]}
