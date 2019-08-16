@@ -79,18 +79,6 @@
 				"max_usage": 1
 			},
 			{
-				"name": "Auther Sidecar",
-				"filename_pattern": "_auther.yml",
-				"filename": "_auther.yml",
-				"description": "Auther Sidecar deployment",
-				"context_type": "service",
-				"tags": ["deployment", "sidecar"],
-				"preferred_sequence": -9995,
-				"suggested": false,
-				"min_usage": 0,
-				"max_usage": 9999
-			},
-			{
 				"name": "Redis",
 				"filename_pattern": "redis.yml",
 				"filename": "redis.yml",
