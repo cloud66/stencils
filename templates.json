@@ -31,18 +31,6 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "All in One",
-				"filename_pattern": "all-in-one.yml",
-				"filename": "all-in-one.yml",
-				"description": "Single Service all in one configuration",
-				"context_type": "service",
-				"tags": ["service", "demo"],
-				"preferred_sequence": 1,
-				"suggested": false,
-				"min_usage": 0,
-				"max_usage": 1
-			},
-			{
 				"name": "Deployment",
 				"filename_pattern": "${service}_deploy.yml",
 				"filename": "deploy.yml",
@@ -52,18 +40,6 @@
 				"preferred_sequence": 1,
 				"suggested": true,
 				"min_usage": 1,
-				"max_usage": 9999
-			},
-			{
-				"name": "Deployment (Protected)",
-				"filename_pattern": "${service}_deploy.yml",
-				"filename": "deploy-auther.yml",
-				"description": "Defines a deployment with auther sidecar",
-				"context_type": "service",
-				"tags": ["deployment"],
-				"preferred_sequence": 1,
-				"suggested": false,
-				"min_usage": 0,
 				"max_usage": 9999
 			},
 			{
@@ -151,11 +127,23 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "Custom",
+				"name": "Custom Application Stencil",
 				"filename_pattern": "blank.yml",
 				"filename": "blank.yml",
-				"description": "Blank custom file",
+				"description": "Blank custom file at application level",
 				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": 9997,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Custom Service Stencil",
+				"filename_pattern": "blank_${service}.yml",
+				"filename": "blank_service.yml",
+				"description": "Blank custom file at service level",
+				"context_type": "service",
 				"tags": [],
 				"preferred_sequence": 9998,
 				"suggested": false,
