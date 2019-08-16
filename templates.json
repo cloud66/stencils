@@ -115,10 +115,10 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "Custom Application Stencil",
+				"name": "Custom Formation Stencil",
 				"filename_pattern": "blank.yml",
 				"filename": "blank.yml",
-				"description": "Blank custom file at application level",
+				"description": "Blank custom file at formation level",
 				"context_type": "stack",
 				"tags": [],
 				"preferred_sequence": 9997,
