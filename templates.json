@@ -103,6 +103,18 @@
 				"max_usage": 9999
 			},
 			{
+				"name": "ConfigMap",
+				"filename_pattern": "config_map.yml",
+				"filename": "config_map.yml",
+				"description": "Adding Secrets from environment variables",
+				"context_type": "stack",
+				"tags": ["config"],
+				"preferred_sequence": -9995,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
 				"name": "Event Relay",
 				"filename_pattern": "event-relay.yml",
 				"filename": "event-relay.yml",
