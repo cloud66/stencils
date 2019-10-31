@@ -15,6 +15,7 @@ spec:
       labels:
         app: k8s-event-relay
     spec:      
+      serviceAccount: c66-user
       containers:
       - name: k8s-event-relay
         imagePullPolicy: Always
