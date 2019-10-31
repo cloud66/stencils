@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  namespace: kube-system
+  namespace: c66-system
   name: k8s-event-relay
   annotations:
     cloud66.com/formation-uuid: ${formation["uuid"]}
