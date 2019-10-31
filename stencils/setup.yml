@@ -6,6 +6,7 @@ metadata:
   name: c66-system
   labels:
     certmanager.k8s.io/disable-validation: "true"  
+    cloud66.com/relay-events: "true"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -35,6 +36,7 @@ metadata:
     cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+    cloud66.com/relay-events: "true"
 ---
 # Secret store for account level secrets
 kind: Secret
