@@ -43,18 +43,6 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "Deployment (Protected)",
-				"filename_pattern": "${service}_deploy.yml",
-				"filename": "deploy-auther.yml",
-				"description": "Defines a deployment with auther sidecar",
-				"context_type": "service",
-				"tags": ["deployment"],
-				"preferred_sequence": 1,
-				"suggested": false,
-				"min_usage": 0,
-				"max_usage": 9999
-			},
-			{
 				"name": "Setup",
 				"filename_pattern": "setup.yml",
 				"filename": "setup.yml",
@@ -68,8 +56,8 @@
 			},
 			{
 				"name": "ExternalDNS",
-				"filename_pattern": "external_dns.yml",
-				"filename": "external_dns.yml",
+				"filename_pattern": "external-dns.yml",
+				"filename": "external-dns.yml",
 				"description": "ExternalDNS setup with Cloud 66 ZoneDNS",
 				"context_type": "stack",
 				"tags": ["external-dns"],
@@ -80,8 +68,8 @@
 			},
 			{
 				"name": "Cert Manager",
-				"filename_pattern": "cert_manager.yml",
-				"filename": "cert_manager.yml",
+				"filename_pattern": "cert-manager.yml",
+				"filename": "cert-manager.yml",
 				"description": "Kubernetes cert-manager setup",
 				"context_type": "stack",
 				"tags": ["cert-manager"],
