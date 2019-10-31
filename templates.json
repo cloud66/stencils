@@ -91,7 +91,7 @@
 				"max_usage": 1
 			},
 			{
-				"name": "cert-manager",
+				"name": "Cert Manager",
 				"filename_pattern": "cert_manager.yml",
 				"filename": "cert_manager.yml",
 				"description": "Kubernetes cert-manager setup",
@@ -161,6 +161,18 @@
 				"suggested": false,
 				"min_usage": 0,
 				"max_usage": 9999
+			},
+			{
+				"name": "Cloud 66 Service Account",
+				"filename_pattern": "c66-user.yml",
+				"filename": "c66-user.yml",
+				"description": "Cloud 66 Service Account",
+				"context_type": "stack",
+				"tags": ["setup"],
+				"preferred_sequence": -9996,
+				"suggested": false,
+				"min_usage": 1,
+				"max_usage": 1				
 			}
 		],
 		"policies": [],
