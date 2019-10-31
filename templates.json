@@ -15,7 +15,7 @@
 				"tags": ["ingress"],
 				"preferred_sequence": 3,
 				"suggested": true,
-				"min_usage": 1,
+				"min_usage": 0,
 				"max_usage": 9999
 			},
 			{
@@ -27,20 +27,8 @@
 				"tags": ["service"],
 				"preferred_sequence": 2,
 				"suggested": true,
-				"min_usage": 1,
-				"max_usage": 9999
-			},
-			{
-				"name": "All in One",
-				"filename_pattern": "all-in-one.yml",
-				"filename": "all-in-one.yml",
-				"description": "Single Service all in one configuration",
-				"context_type": "service",
-				"tags": ["service", "demo"],
-				"preferred_sequence": 1,
-				"suggested": false,
 				"min_usage": 0,
-				"max_usage": 1
+				"max_usage": 9999
 			},
 			{
 				"name": "Deployment",
@@ -51,7 +39,7 @@
 				"tags": ["deployment"],
 				"preferred_sequence": 1,
 				"suggested": true,
-				"min_usage": 1,
+				"min_usage": 0,
 				"max_usage": 9999
 			},
 			{
@@ -87,7 +75,7 @@
 				"tags": ["external-dns"],
 				"preferred_sequence": -9998,
 				"suggested": true,
-				"min_usage": 1,
+				"min_usage": 0,
 				"max_usage": 1
 			},
 			{
@@ -99,43 +87,19 @@
 				"tags": ["cert-manager"],
 				"preferred_sequence": -9997,
 				"suggested": true,
-				"min_usage": 1,
+				"min_usage": 0,
 				"max_usage": 1
-			},
-			{
-				"name": "Auther Sidecar",
-				"filename_pattern": "_auther.yml",
-				"filename": "_auther.yml",
-				"description": "Auther Sidecar deployment",
-				"context_type": "service",
-				"tags": ["deployment", "sidecar"],
-				"preferred_sequence": -9995,
-				"suggested": false,
-				"min_usage": 0,
-				"max_usage": 9999
-			},
-			{
-				"name": "Redis",
-				"filename_pattern": "redis.yml",
-				"filename": "redis.yml",
-				"description": "Redis as a service",
-				"context_type": "stack",
-				"tags": ["services", "redis", "local"],
-				"preferred_sequence": -9993,
-				"suggested": false,
-				"min_usage": 0,
-				"max_usage": 9999
 			},
 			{
 				"name": "Secrets",
 				"filename_pattern": "secrets.yml",
 				"filename": "secrets.yml",
-				"description": "Adding Secrets from Vault",
+				"description": "Kubernetes secret store creation",
 				"context_type": "stack",
 				"tags": ["config"],
 				"preferred_sequence": -9994,
 				"suggested": false,
-				"min_usage": 0,
+				"min_usage": 1,
 				"max_usage": 9999
 			},
 			{
@@ -147,7 +111,7 @@
 				"tags": ["config", "setup"],
 				"preferred_sequence": -9996,
 				"suggested": false,
-				"min_usage": 0,
+				"min_usage": 1,
 				"max_usage": 9999
 			},
 			{
@@ -161,21 +125,59 @@
 				"suggested": false,
 				"min_usage": 0,
 				"max_usage": 9999
-			},
-			{
-				"name": "Cloud 66 Service Account",
-				"filename_pattern": "c66-user.yml",
-				"filename": "c66-user.yml",
-				"description": "Cloud 66 Service Account",
-				"context_type": "stack",
-				"tags": ["setup"],
-				"preferred_sequence": -9996,
-				"suggested": false,
-				"min_usage": 1,
-				"max_usage": 1				
 			}
 		],
 		"policies": [],
-		"transformations": []
+		"transformations": [],
+		"helm_charts": [
+            {
+                "name": "MySQL",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/mysql.yml"
+                }],
+                "description": "Formation Integrated MySQL values.yml",
+                "tags": ["database", "mysql"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "mysql",
+                "chart_version": "1.2.1"
+            },
+            {
+                "name": "PostgreSQL",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/postgresql.yml"
+                }],
+                "description": "Formation Integrated PostgreSQL values.yml",
+                "tags": ["database", "postgresql"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "postgresql",
+                "chart_version": "5.3.11"
+            },
+            {
+                "name": "Redis",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/redis.yml"
+                }],
+                "description": "Formation Integrated Redis values.yml",
+                "tags": ["database", "redis"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "redis",
+                "chart_version": "8.0.14"
+            },
+            {
+                "name": "MongoDB",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/mongodb.yml"
+                }],
+                "description": "Formation Integrated MongoDB values.yml",
+                "tags": ["database", "mongodb"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "mongodb",
+                "chart_version": "5.20.3"
+            }
+        ]
 	}
 }

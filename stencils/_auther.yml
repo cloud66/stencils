@@ -1,5 +1,0 @@
-- name: web-auther
-  image: cloud66/auther:latest
-  command: ["/go/src/auther/auther", "--port", "${require(\"PORT\")}", "--backend-port", "${require(\"APP_PORT\")}"]
-  ports:
-    - containerPort: ${require("PORT")}
