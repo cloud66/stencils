@@ -1,7 +1,7 @@
 {
 	"version": "v1",
 	"public": true,
-	"name": "general-cloud66",
+	"name": "cloud66",
 	"long_name": "General Cloud 66 Base Template Repository",
 	"description": "Default Base Template Repository with the general stencils for our customers to get started with Skycap",
 	"templates": {
@@ -107,6 +107,18 @@
 				"filename_pattern": "blank.yml",
 				"filename": "blank.yml",
 				"description": "Blank custom file",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": 9998,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "MySQL Config",
+				"filename_pattern": "_mysql.yml",
+				"filename": "_mysql.yml",
+				"description": "MySQL Config",
 				"context_type": "stack",
 				"tags": [],
 				"preferred_sequence": 9998,
