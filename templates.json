@@ -176,7 +176,8 @@
                 "tags": ["database", "mysql"],
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "mysql",
-                "chart_version": "1.2.1"
+                "chart_version": "1.2.1",
+                "dependencies": ["stencils/_mysql.yml"]
             },
             {
                 "name": "PostgreSQL",
@@ -188,7 +189,8 @@
                 "tags": ["database", "postgresql"],
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "postgresql",
-                "chart_version": "5.3.11"
+                "chart_version": "5.3.11",
+                "dependencies": ["stencils/_postgresql.yml"]
             },
             {
                 "name": "Redis",
@@ -200,7 +202,8 @@
                 "tags": ["database", "redis"],
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "redis",
-                "chart_version": "8.0.14"
+                "chart_version": "8.0.14",
+                "dependencies": ["stencils/_redis.yml"]
             },
             {
                 "name": "MongoDB",
@@ -212,7 +215,8 @@
                 "tags": ["database", "mongodb"],
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "mongodb",
-                "chart_version": "5.20.3"
+                "chart_version": "5.20.3",
+                "dependencies": ["stencils/_mongodb.yml"]
             }
         ]
 	}
