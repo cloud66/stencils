@@ -115,13 +115,49 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "MySQL Config",
+				"name": "MySQL Secrets",
 				"filename_pattern": "_mysql.yml",
 				"filename": "_mysql.yml",
-				"description": "MySQL Config",
+				"description": "MySQL Secrets",
 				"context_type": "stack",
 				"tags": [],
-				"preferred_sequence": 9998,
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "PostgreSQL Secrets",
+				"filename_pattern": "_postgresql.yml",
+				"filename": "_postgresql.yml",
+				"description": "PostgreSQL Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Redis Secrets",
+				"filename_pattern": "_redis.yml",
+				"filename": "_redis.yml",
+				"description": "Redis Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "MongoDB Secrets",
+				"filename_pattern": "_mongodb.yml",
+				"filename": "_mongodb.yml",
+				"description": "MongoDB Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
 				"suggested": false,
 				"min_usage": 0,
 				"max_usage": 9999
