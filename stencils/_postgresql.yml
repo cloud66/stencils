@@ -1,20 +1,20 @@
 - name: POSTGRESQL_HOST
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: postgresql.host            
 - name: POSTGRESQL_DATABASE
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: postgresql.database                  
 - name: POSTGRESQL_USERNAME
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: postgresql.username
 - name: POSTGRESQL_PASSWORD
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: postgresql.password

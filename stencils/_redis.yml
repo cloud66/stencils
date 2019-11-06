@@ -1,20 +1,20 @@
 - name: REDIS_HOST
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: redis.host            
 - name: REDIS_DATABASE
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: redis.database                  
 - name: REDIS_USERNAME
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: redis.username
 - name: REDIS_PASSWORD
   valueFrom:
     secretKeyRef:
-      name: ${concat(formation, "-configstore")}
+      name: ${concat(stackname, "-configstore")}
       key: redis.password
