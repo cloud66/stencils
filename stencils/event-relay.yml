@@ -10,6 +10,9 @@ metadata:
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-event-relay      
   template:
     metadata:
       labels:

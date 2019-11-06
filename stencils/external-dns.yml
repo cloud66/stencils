@@ -42,6 +42,9 @@ metadata:
   name: external-dns
   namespace: ${formation}
 spec:
+  selector:
+    matchLabels:
+      app: external-dns
   strategy:
     type: Recreate
   template:
