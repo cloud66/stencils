@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   namespace: kube-system
@@ -7,9 +7,6 @@ metadata:
     k8s-app: default-http-backend
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: default-http-backend
   template:
     metadata:
       labels:

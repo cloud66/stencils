@@ -36,15 +36,12 @@ subjects:
   name: external-dns
   namespace: ${formation}
 ---
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: external-dns
   namespace: ${formation}
 spec:
-  selector:
-    matchLabels:
-      app: external-dns
   strategy:
     type: Recreate
   template:

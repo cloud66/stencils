@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   namespace: c66-system
@@ -10,9 +10,6 @@ metadata:
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: k8s-event-relay      
   template:
     metadata:
       labels:
