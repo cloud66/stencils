@@ -218,6 +218,15 @@
                 "chart_version": "5.20.3",
                 "dependencies": ["stencils/_mongodb.yml"]
             }
+        ],
+        "workflows":
+        [
+            {
+                "name": "Setup Workflow",
+                "description": "Render and deploy of setups stencils and helm releases",
+                "tags": [],
+                "filename": "setup.yml"
+            }
         ]
-	}
+    }
 }

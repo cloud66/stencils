@@ -1,0 +1,26 @@
+version: 1
+steps:
+  - name: setup
+    command: ${rendercommand(["setup.yml","secrets.yml","event-relay.yml"])} # Render and apply the setup stencils so to have the namespace and the secrets right. can remove event-relay from the list
+    preflights:
+      - command: "cx version"
+        message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
+      - command: "kubectl version"
+        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
+  - name: helm
+    command: ${helmcommand} # Deploy helm releases. we need the namespace to be there.
+    preflights:
+      - command: "kubectl version"
+        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
+      - command: "helm version"
+        message: "It looks like you don't have Helm installed! This page might help you install it https://helm.sh/docs/using_helm/"
+    depends_on: ["setup"]
+    #### Uncomment to deploy the rest of the application
+#  - name: render
+#    command: ${rendercommand} # Render again the formation and deploy ALL the stencils. there's no way for us to know what others stencils the user added and name all of them and re-apply the setup and secrets is not a problem
+#    preflights:
+#      - command: "cx version"
+#        message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
+#      - command: "kubectl version"
+#        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
+#    depends_on: ["setup", "helm"]
