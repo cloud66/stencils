@@ -1,7 +1,7 @@
 version: 1
 steps:
   - name: setup
-    command: ${render_command(["setup.yml","secrets.yml","event-relay.yml"])} # Render and apply the setup stencils so to have the namespace and the secrets right. can remove event-relay from the list
+    command: ${render_command(["setup.yml@cloud66","secrets.yml@cloud66","event-relay.yml@cloud66"])} # Render and apply the setup stencils so to have the namespace and the secrets right. can remove event-relay from the list
     preflights:
       - command: "cx version"
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
