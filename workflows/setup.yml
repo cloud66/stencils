@@ -7,7 +7,7 @@ steps:
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
       - command: "kubectl version"
         message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
-  ${repeat_inline("_helm_upgrade.yml", 2, [{ "foo": "bar" }, { "foo": "buzz" } ])}
+  ${repeat_inline("_helm_upgrade.yml@cloud66", 2, [{ "foo": "bar" }, { "foo": "buzz" } ])}
     #### Uncomment to deploy the rest of the application
 #  - name: render
 #    command: ${render_command} # Render again the formation and deploy ALL the stencils. there's no way for us to know what others stencils the user added and name all of them and re-apply the setup and secrets is not a problem
