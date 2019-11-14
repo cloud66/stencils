@@ -226,6 +226,12 @@
                 "description": "Render and deploy of setups stencils and helm releases",
                 "tags": [],
                 "filename": "setup.yml"
+            },
+            {
+                "name": "Helm Release Inline",
+                "description": "partial for helm release deployment",
+                "tags": [],
+                "filename": "_helm_upgrade.yml"
             }
         ]
     }
