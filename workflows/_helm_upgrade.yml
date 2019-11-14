@@ -1,5 +1,5 @@
 - name: helm
-  command: ${helm_command} # Deploy helm releases. we need the namespace to be there.
+  command: ${helm_command()} # Deploy helm releases. we need the namespace to be there.
   preflights:
     - command: "kubectl version"
       message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
