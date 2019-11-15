@@ -6,5 +6,5 @@ steps:
       - command: "cx version"
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
       - command: "kubectl version"
-        message: "yolo"
+        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
 ${repeat_inline("_helm_upgrade@cloud66.yml", 2, fetch(concat("$.stack.helm.releases[?(@.formation.name==",formation,")]")))}
