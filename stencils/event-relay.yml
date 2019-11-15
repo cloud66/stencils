@@ -19,6 +19,6 @@ spec:
       containers:
       - name: k8s-event-relay
         imagePullPolicy: Always
-        image: cloud66/k8s-event-relay:latest
+        image: cloud66/k8s-event-relay:3.1.0
         command: ["k8s-event-relay"]
-        args: ["--upstream-host=https://app.cloud66.com", "--log=STDOUT", "--log-level=info", "--api=${env("CLOUD66_ACCOUNT_KEY")}", "--ctx=${formation["uuid"]}", "--ctx-type=formation"]
+        args: ["--upstream-host=https://app.cloud66.com", "--log=STDOUT", "--log-level=info", "--api=${env("CLOUD66_ACCOUNT_KEY")}", "--ctx-type=skycap"]
