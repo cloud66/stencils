@@ -1,19 +1,10 @@
 version: 1
 steps:
   - name: setup
-    command: ${render_command(["setup.yml@cloud66","secrets.yml@cloud66","event-relay.yml@cloud66"])} # Render and apply the setup stencils so to have the namespace and the secrets right. can remove event-relay from the list
+    command: bash -c 'cx snapshots render --stack ${stackname} --snapshot ${snapshot["uid"]} --formation ${formation["uuid"]} --files "stencils/${formation["uuid"]}/setup.yml@cloud66","stencils/${formation["uuid"]}/secrets.yml@cloud66","stencils/${formation["uuid"]}/event-relay.yml@cloud66" | kubectl apply -f - '
     preflights:
       - command: "cx version"
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
       - command: "kubectl version"
-        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
-  ${repeat_inline("_helm_upgrade.yml@cloud66", 2, [{ "foo": "bar" }, { "foo": "buzz" } ])}
-    #### Uncomment to deploy the rest of the application
-#  - name: render
-#    command: ${render_command} # Render again the formation and deploy ALL the stencils. there's no way for us to know what others stencils the user added and name all of them and re-apply the setup and secrets is not a problem
-#    preflights:
-#      - command: "cx version"
-#        message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
-#      - command: "kubectl version"
-#        message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
-#    depends_on: ["setup", "helm"]
+        message: "yolo"
+  ${repeat_inline("_helm_upgrade.yml@cloud66", 2, fetch(concat("$.stack.helm.releases[?(@.formation.name==",formation,")]")))}
