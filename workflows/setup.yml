@@ -1,10 +1,10 @@
 version: 1
 steps:
   - name: setup
-    command: bash -c 'cx snapshots render --stack ${stackname} --snapshot ${snapshot["uid"]} --formation ${formation["uuid"]} --files "stencils/${formation["uuid"]}/setup.yml@cloud66","stencils/${formation["uuid"]}/secrets.yml@cloud66","stencils/${formation["uuid"]}/event-relay.yml@cloud66" | kubectl apply -f - '
+    command: bash -c 'cx snapshots render --stack ${stackname} --snapshot ${snapshot["uid"]} --formation ${formation["uuid"]} --files "stencils/${formation["uuid"]}/setup@cloud66.yml","stencils/${formation["uuid"]}/secrets@cloud66.yml","stencils/${formation["uuid"]}/event-relay@cloud66.yml" | kubectl apply -f - '
     preflights:
       - command: "cx version"
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
       - command: "kubectl version"
         message: "yolo"
-${repeat_inline("_helm_upgrade.yml@cloud66", 2, fetch(concat("$.stack.helm.releases[?(@.formation.name==",formation,")]")))}
+${repeat_inline("_helm_upgrade@cloud66.yml", 2, fetch(concat("$.stack.helm.releases[?(@.formation.name==",formation,")]")))}
