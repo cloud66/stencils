@@ -1,0 +1,8 @@
+- name: helm-${name}
+  command: bash -c 'cx snapshots render --stack ${stackname} --snapshot ${snapshot["uid"]} --formation ${formation["uuid"]} --files ${join(fetch(concat("$.stack.helm.release_configurations[?(@.helm_release.uuid==",uuid,")].git.file_path")))} | helm upgrade --install --force --reset-values --namespace "${formation}" "${name}" ${concat("\"",helm(name, "url"),"\"")} -f - '
+  preflights:
+    - command: "kubectl version"
+      message: "It looks like you don't have kubectl installed! This page can help you install it https://kubernetes.io/docs/tasks/tools/install-kubectl/"
+    - command: "helm version"
+      message: "It looks like you don't have Helm installed! This page might help you install it https://helm.sh/docs/using_helm/"
+  depends_on: ["setup"]
