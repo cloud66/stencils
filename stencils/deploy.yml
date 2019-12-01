@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: ${formation}
-  name: ${concat(service, "-dep")}
+  namespace: ${formation.name}
+  name: ${concat(service.name, "-dep")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
-    cloud66.com/service-name: ${service}
+    cloud66.com/formation-uuid: ${formation.uuid}
+    cloud66.com/stencil-uuid: ${stencil.uuid}
+    cloud66.com/snapshot-uid: ${snapshot.uid}
+    cloud66.com/snapshot-gitref: ${snapshot.gitref}
+    cloud66.com/service-name: ${service.name}
 spec:
   selector:
     matchLabels:
-      app: ${stackname}
-      tier: ${service}
+      app: ${stack.name}
+      tier: ${service.name}
   template:
     metadata:
       labels: # be careful changing labels. It can break your deployment
-        app: ${stackname}
-        tier: ${service}
+        app: ${stack.name}
+        tier: ${service.name}
     spec:
       containers:
-        - name: ${service}
+        - name: ${service.name}
           image: ${concat(repo, "/", image(repo, "name"), ":", image(repo, "tag"))}
           ports: # Comment out this (and the line below) if don't need to expose any ports for this pod
             - containerPort: ${require("PORT")}

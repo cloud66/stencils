@@ -2,22 +2,22 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: ${formation}
-  name: ${concat(service, "-svc")}
+  namespace: ${formation.name}
+  name: ${concat(service.name, "-svc")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
-    cloud66.com/service-name: ${service}
+    cloud66.com/formation-uuid: ${formation.uuid}
+    cloud66.com/stencil-uuid: ${stencil.uuid}
+    cloud66.com/snapshot-uid: ${snapshot.uid}
+    cloud66.com/snapshot-gitref: ${snapshot.gitref}
+    cloud66.com/service-name: ${service.name}
   labels:
-    app: ${stackname}
-    tier: ${service}
+    app: ${stack.name}
+    tier: ${service.name}
 spec:
   type: NodePort
   ports:
-  - port: ${require("EXTERNAL_PORT")}
-    targetPort: ${require("INTERNAL_PORT")}
+  - port: ${service.ports.http}
+    targetPort: ${service.ports.container}
   selector:
-    app: ${stackname}
-    tier: ${service}
+    app: ${stack.name}
+    tier: ${service.name}

@@ -5,7 +5,7 @@ apiVersion: v1
 metadata:
   name: c66-system
   labels:
-    certmanager.k8s.io/disable-validation: "true"  
+    certmanager.k8s.io/disable-validation: "true"
     cloud66.com/relay-events: "true"
 ---
 apiVersion: v1
@@ -26,16 +26,16 @@ subjects:
 - kind: ServiceAccount
   name: c66-user
   namespace: c66-system
----  
+---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ${formation}
+  name: ${formation.name}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+    cloud66.com/formation-uuid: ${formation.uuid}
+    cloud66.com/stencil-uuid: ${stencil.uuid}
+    cloud66.com/snapshot-uid: ${snapshot.uid}
+    cloud66.com/snapshot-gitref: ${snapshot.gitref}
     cloud66.com/relay-events: "true"
 ---
 # Secret store for account level secrets
@@ -43,12 +43,12 @@ kind: Secret
 apiVersion: v1
 type: Opaque
 metadata:
-  namespace: ${formation}
+  namespace: ${formation.name}
   name: account-secrets
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}  
+    cloud66.com/formation-uuid: ${formation.uuid}
+    cloud66.com/stencil-uuid: ${stencil.uuid}
+    cloud66.com/snapshot-uid: ${snapshot.uid}
+    cloud66.com/snapshot-gitref: ${snapshot.gitref}
 stringData:
-  api.key: ${account["api_key"]}
+  api.key: ${account.api_key}

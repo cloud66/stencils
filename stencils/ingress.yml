@@ -3,13 +3,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: ${formation}
-  name: ${concat(service, "-ingress")}
+  namespace: ${formation.name}
+  name: ${concat(service.name, "-ingress")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+    cloud66.com/formation-uuid: ${formation.uuid}
+    cloud66.com/stencil-uuid: ${stencil.uuid}
+    cloud66.com/snapshot-uid: ${snapshot.uid}
+    cloud66.com/snapshot-gitref: ${snapshot.gitref}
     # uncomment this annotation and replace the value with your class of ingress controller
     # kubernetes.io/ingress.class: "nginx"
     # uncomment the following two annotations to allow cert-manager to issue an SSL certificate for this ingress
@@ -17,22 +17,22 @@ metadata:
     # certmanager.k8s.io/cluster-issuer: cert-manager-cluster-issuer
     # certmanager.k8s.io/acme-challenge-type: http01
   labels:
-    app: ${stackname}
-    tier: ${service}
+    app: ${stack.name}
+    tier: ${service.name}
 spec:
   # uncomment the following section to set up the ingress rules
   # if you plan to use the endpoint function for the host, make sure that you include the external_dns.yml stencil
   # rules:
-  # - host: ${endpoint(service["name"])}
+  # - host: ${endpoint(service.name)}
   #   http:
   #     paths:
   #     - backend:
-  #         serviceName: ${concat(service, "-svc")}
+  #         serviceName: ${concat(service.name, "-svc")}
   #         servicePort: ${require("EXTERNAL_PORT")}
   #
   # uncomment the following section to let cert-manager know it should generate an SSL certificate for the given hosts and store it in the given secret
   # if you plan to use cert-manager, make sure that you include the cert_manager.yml stencil
   # tls:
-  # - secretName: ${service}-tls
+  # - secretName: ${service.name}-tls
   #   hosts:
-  #   - ${endpoint(service["name"])}
+  #   - ${endpoint(service.name)}

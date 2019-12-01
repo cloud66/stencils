@@ -1,20 +1,20 @@
 - name: MONGODB_HOST
   valueFrom:
     secretKeyRef:
-      name: ${concat(stackname, "-configstore")}
-      key: mongodb.host            
+      name: ${concat(stack.name, "-configstore")}
+      key: mongodb.host
 - name: MONGODB_DATABASE
   valueFrom:
     secretKeyRef:
-      name: ${concat(stackname, "-configstore")}
-      key: mongodb.database                  
+      name: ${concat(stack.name, "-configstore")}
+      key: mongodb.database
 - name: MONGODB_USERNAME
   valueFrom:
     secretKeyRef:
-      name: ${concat(stackname, "-configstore")}
+      name: ${concat(stack.name, "-configstore")}
       key: mongodb.username
 - name: MONGODB_PASSWORD
   valueFrom:
     secretKeyRef:
-      name: ${concat(stackname, "-configstore")}
+      name: ${concat(stack.name, "-configstore")}
       key: mongodb.password
