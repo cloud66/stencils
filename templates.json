@@ -1,7 +1,7 @@
 {
 	"version": "v1",
 	"public": true,
-	"name": "cloud66-dev",
+	"name": "cloud66",
 	"long_name": "General Cloud 66 Base Template Repository",
 	"description": "Default Base Template Repository with the general stencils for our customers to get started with Skycap",
 	"templates": {
