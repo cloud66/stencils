@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     # use the ssl.js transformer to add SSL to this ingress
   labels:
-    app: ${stack.name}
+    app: ${application.name}
     tier: ${service.name}
 spec:
   # use the ingress.js transformer to automatically configure this ingress.
