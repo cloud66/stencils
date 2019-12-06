@@ -5,8 +5,8 @@ kind: Ingress
 metadata:
   namespace: ${formation.name}
   name: ${concat(service.name, "-ingress")}
+  annotations:
     kubernetes.io/ingress.class: "nginx"
-    # use the ssl.js transformer to add SSL to this ingress
   labels:
     app: ${application.name}
     tier: ${service.name}
@@ -19,11 +19,10 @@ spec:
   #     paths:
   #     - backend:
   #         serviceName: ${concat(service.name, "-svc")}
-  #         servicePort: ${require("EXTERNAL_PORT")}
+  #         servicePort: ${service.port.http}
   #
-  # uncomment the following section to let cert-manager know it should generate an SSL certificate for the given hosts and store it in the given secret
-  # if you plan to use cert-manager, make sure that you include the cert_manager.yml stencil
+  # use the ssl.js transformer to add SSL to this ingress. Make sure you have cert_manager stencil added to your cluster
   # tls:
-  # - secretName: ${service.name}-tls
+  # - secretName: ${concat(service.name, "-tls")}
   #   hosts:
   #   - ${endpoint(service.name)}

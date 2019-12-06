@@ -72,7 +72,7 @@
 				"filename": "cert-manager.yml",
 				"description": "Kubernetes cert-manager setup",
 				"context_type": "stack",
-				"tags": ["cert-manager"],
+				"tags": ["cert-manager", "cluster"],
 				"preferred_sequence": -9997,
 				"suggested": true,
 				"min_usage": 0,
@@ -96,7 +96,7 @@
 				"filename": "event-relay.yml",
 				"description": "Notify when formations deployed",
 				"context_type": "stack",
-				"tags": ["config", "setup"],
+				"tags": ["config", "setup", "cluster"],
 				"preferred_sequence": -9996,
 				"suggested": false,
 				"min_usage": 1,
@@ -189,12 +189,6 @@
 				"filename": "annotations.js",
 				"tags": ["annotations"],
 				"preferred_sequence": 1
-			},
-			{
-				"name": "ingress.js",
-				"filename": "ingress.js",
-				"tags": ["network", "containernet", "nginx"],
-				"preferred_sequence": 2
 			},
 			{
 				"name": "dns.js",
