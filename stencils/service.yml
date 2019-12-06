@@ -5,19 +5,16 @@ metadata:
   namespace: ${formation.name}
   name: ${concat(service.name, "-svc")}
   annotations:
-    cloud66.com/formation-uuid: ${formation.uuid}
-    cloud66.com/stencil-uuid: ${stencil.uuid}
-    cloud66.com/snapshot-uid: ${snapshot.uid}
-    cloud66.com/snapshot-gitref: ${snapshot.gitref}
     cloud66.com/service-name: ${service.name}
   labels:
     app: ${stack.name}
     tier: ${service.name}
 spec:
-  type: NodePort
+  type: NodePort # NodePort assumes you're using an ingress. You can use LoadBalancer or ClusterIP options here
   ports:
-  - port: ${service.ports.http}
-    targetPort: ${service.ports.container}
+  # service.port is a shorthand for service.ports[0]. If you have more than 1 port, you can use the full syntax
+  - port: ${service.port.http}
+    targetPort: ${service.port.container}
   selector:
     app: ${stack.name}
     tier: ${service.name}

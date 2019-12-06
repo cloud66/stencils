@@ -3,11 +3,6 @@ kind: Deployment
 metadata:
   namespace: c66-system
   name: k8s-event-relay
-  annotations:
-    cloud66.com/formation-uuid: ${formation.uuid}
-    cloud66.com/stencil-uuid: ${stencil.uuid}
-    cloud66.com/snapshot-uid: ${snapshot.uid}
-    cloud66.com/snapshot-gitref: ${snapshot.gitref}
 spec:
   replicas: 1
   template:

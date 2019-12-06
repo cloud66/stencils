@@ -32,10 +32,6 @@ kind: Namespace
 metadata:
   name: ${formation.name}
   annotations:
-    cloud66.com/formation-uuid: ${formation.uuid}
-    cloud66.com/stencil-uuid: ${stencil.uuid}
-    cloud66.com/snapshot-uid: ${snapshot.uid}
-    cloud66.com/snapshot-gitref: ${snapshot.gitref}
     cloud66.com/relay-events: "true"
 ---
 # Secret store for account level secrets
@@ -45,10 +41,5 @@ type: Opaque
 metadata:
   namespace: ${formation.name}
   name: account-secrets
-  annotations:
-    cloud66.com/formation-uuid: ${formation.uuid}
-    cloud66.com/stencil-uuid: ${stencil.uuid}
-    cloud66.com/snapshot-uid: ${snapshot.uid}
-    cloud66.com/snapshot-gitref: ${snapshot.gitref}
 stringData:
   api.key: ${account.api_key}
