@@ -167,26 +167,31 @@
 		"transformations": [
 			{
 				"name": "blank.js",
+				"filename": "blank.js",
 				"tags": [],
 				"sequence": 9999
 			},
 			{
 				"name": "annotations.js",
+				"filename": "annotations.js",
 				"tags": ["annotations"],
 				"sequence": 1
 			},
 			{
 				"name": "ingress.js",
+				"filename": "ingress.js",
 				"tags": ["network", "containernet", "nginx"],
 				"sequence": 2
 			},
 			{
 				"name": "dns.js",
+				"filename": "dns.js",
 				"tags": ["dns", "network", "containernet", "zonedns"],
 				"sequence": 3
 			},
 			{
 				"name": "ssl.js",
+				"filename": "ssl.js",
 				"tags": ["ssl", "network", "containernet"],
 				"sequence": 4
 			}
