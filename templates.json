@@ -164,7 +164,33 @@
 			}
 		],
 		"policies": [],
-		"transformations": [],
+		"transformations": [
+			{
+				"name": "blank.js",
+				"tags": [],
+				"sequence": 9999
+			},
+			{
+				"name": "annotations.js",
+				"tags": ["annotations"],
+				"sequence": 1
+			},
+			{
+				"name": "ingress.js",
+				"tags": ["network", "containernet", "nginx"],
+				"sequence": 2
+			},
+			{
+				"name": "dns.js",
+				"tags": ["dns", "network", "containernet", "zonedns"],
+				"sequence": 3
+			},
+			{
+				"name": "ssl.js",
+				"tags": ["ssl", "network", "containernet"],
+				"sequence": 4
+			}
+		],
 		"helm_charts": [
             {
                 "name": "MySQL",
