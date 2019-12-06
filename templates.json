@@ -163,7 +163,20 @@
 				"max_usage": 9999
 			}
 		],
-		"policies": [],
+		"policies": [
+			{
+				"name": "blank.js",
+				"filename": "blank.js",
+				"tags": [],
+				"sequence": 9999
+			},
+			{
+				"name": "no_latest.js",
+				"filename": "no_latest.js",
+				"tags": ["image"],
+				"sequence": 1
+			}
+		],
 		"transformations": [
 			{
 				"name": "blank.js",
