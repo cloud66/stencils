@@ -14,7 +14,7 @@ spec:
   # use the ingress.js transformer to automatically configure this ingress.
   # the following are examples and can be removed
   # rules:
-  # - host: ${endpoint(service.name)}
+  # - host: ${service.endpoint}
   #   http:
   #     paths:
   #     - backend:
@@ -25,4 +25,4 @@ spec:
   # tls:
   # - secretName: ${concat(service.name, "-tls")}
   #   hosts:
-  #   - ${endpoint(service.name)}
+  #   - ${service.endpoint}

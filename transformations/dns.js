@@ -20,7 +20,7 @@ $$.forEach(function($) {
     }
 
     $.spec.rules.push({
-        host: "${endpoint(service.name)}",
+        host: "${service.endpoint}",
         http: {
             paths: [
                 {

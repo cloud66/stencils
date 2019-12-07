@@ -21,6 +21,6 @@ $$.forEach(function($) {
 
     $.spec.tls.push({
         secretName: "${concat(service.name, \"-tls\")}",
-        hosts: ["${endpoint(service.name)}"]
+        hosts: ["${service.endpoint}"]
     })
 })
