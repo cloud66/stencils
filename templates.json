@@ -117,7 +117,7 @@
 			{
 				"name": "MySQL Secrets",
 				"filename_pattern": "_mysql_credentials.yml",
-				"filename": "_mysql.yml",
+				"filename": "_mysql_credentials.yml",
 				"description": "MySQL Secrets",
 				"context_type": "stack",
 				"tags": [],
@@ -129,7 +129,7 @@
 			{
 				"name": "PostgreSQL Secrets",
 				"filename_pattern": "_postgresql_credentials.yml",
-				"filename": "_postgresql.yml",
+				"filename": "_postgresql_credentials.yml",
 				"description": "PostgreSQL Secrets",
 				"context_type": "stack",
 				"tags": [],
@@ -141,7 +141,7 @@
 			{
 				"name": "Redis Secrets",
 				"filename_pattern": "_redis_credentials.yml",
-				"filename": "_redis.yml",
+				"filename": "_redis_credentials.yml",
 				"description": "Redis Secrets",
 				"context_type": "stack",
 				"tags": [],
@@ -153,7 +153,7 @@
 			{
 				"name": "MongoDB Secrets",
 				"filename_pattern": "_mongodb_credentials.yml",
-				"filename": "_mongodb.yml",
+				"filename": "_mongodb_credentials.yml",
 				"description": "MongoDB Secrets",
 				"context_type": "stack",
 				"tags": [],
@@ -215,7 +215,7 @@
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "mysql",
                 "chart_version": "1.2.1",
-                "dependencies": ["stencils/_mysql.yml"]
+                "dependencies": ["stencils/_mysql_credentials.yml"]
             },
             {
                 "name": "PostgreSQL",
@@ -228,7 +228,7 @@
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "postgresql",
                 "chart_version": "5.3.11",
-                "dependencies": ["stencils/_postgresql.yml"]
+                "dependencies": ["stencils/_postgresql_credentials.yml"]
             },
             {
                 "name": "Redis",
@@ -241,7 +241,7 @@
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "redis",
                 "chart_version": "8.0.14",
-                "dependencies": ["stencils/_redis.yml"]
+                "dependencies": ["stencils/_redis_credentials.yml"]
             },
             {
                 "name": "MongoDB",
@@ -254,7 +254,7 @@
                 "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
                 "chart_name": "mongodb",
                 "chart_version": "5.20.3",
-                "dependencies": ["stencils/_mongodb.yml"]
+                "dependencies": ["stencils/_mongodb_credentials.yml"]
             }
         ],
         "workflows":
