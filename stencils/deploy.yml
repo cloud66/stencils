@@ -1,3 +1,4 @@
+#!remove-empty
 # this is a Stencil for Kubernetes deployments
 apiVersion: apps/v1
 kind: Deployment
