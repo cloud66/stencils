@@ -116,7 +116,7 @@
 			},
 			{
 				"name": "MySQL Secrets",
-				"filename_pattern": "_mysql.yml",
+				"filename_pattern": "_mysql_credentials.yml",
 				"filename": "_mysql.yml",
 				"description": "MySQL Secrets",
 				"context_type": "stack",
@@ -128,7 +128,7 @@
 			},
 			{
 				"name": "PostgreSQL Secrets",
-				"filename_pattern": "_postgresql.yml",
+				"filename_pattern": "_postgresql_credentials.yml",
 				"filename": "_postgresql.yml",
 				"description": "PostgreSQL Secrets",
 				"context_type": "stack",
@@ -140,7 +140,7 @@
 			},
 			{
 				"name": "Redis Secrets",
-				"filename_pattern": "_redis.yml",
+				"filename_pattern": "_redis_credentials.yml",
 				"filename": "_redis.yml",
 				"description": "Redis Secrets",
 				"context_type": "stack",
@@ -152,7 +152,7 @@
 			},
 			{
 				"name": "MongoDB Secrets",
-				"filename_pattern": "_mongodb.yml",
+				"filename_pattern": "_mongodb_credentials.yml",
 				"filename": "_mongodb.yml",
 				"description": "MongoDB Secrets",
 				"context_type": "stack",
