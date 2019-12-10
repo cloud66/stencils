@@ -1,0 +1,54 @@
+# this sets up the cluster with namepsace etc
+# should be the first yaml to run
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: c66-system
+  labels:
+    certmanager.k8s.io/disable-validation: "true"  
+    cloud66.com/relay-events: "true"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: c66-user
+  namespace: c66-system
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: c66-system:c66-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: c66-user
+  namespace: c66-system
+---  
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ${formation}
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+    cloud66.com/relay-events: "true"
+---
+# Secret store for account level secrets
+kind: Secret
+apiVersion: v1
+type: Opaque
+metadata:
+  namespace: ${formation}
+  name: account-secrets
+  annotations:
+    cloud66.com/formation-uuid: ${formation["uuid"]}
+    cloud66.com/stencil-uuid: ${stencil["uuid"]}
+    cloud66.com/snapshot-uid: ${snapshot["uid"]}
+    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}  
+stringData:
+  api.key: ${account["api_key"]}

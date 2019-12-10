@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: ${formation}
-  annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}

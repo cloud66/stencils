@@ -9,6 +9,7 @@ metadata:
     cloud66.com/stencil-uuid: ${stencil["uuid"]}    
     cloud66.com/snapshot-uid: ${snapshot["uid"]}
     cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
+    cloud66.com/service-name: ${service}
   labels:
     app: ${stackname}
     tier: ${service}

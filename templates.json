@@ -1,51 +1,238 @@
 {
 	"version": "v1",
-	"templates": [
-		{
-			"name": "Service",
-			"filename_pattern": "${service}_service.yml",
-			"filename": "service.yml",
-			"description": "Defines a service",
-			"context_type": "service",
-			"tags": ["service"],
-			"preferred_sequence": 2
-		},
-		{
-			"name": "Setup",
-			"filename_pattern": "setup.yml",
-			"filename": "setup.yml",
-			"description": "Setup namespace, etc",
-			"context_type": "stack",
-			"tags": ["setup"],
-			"preferred_sequence": -9999
-		},
-		{
-			"name": "Default HTTP Backend",
-			"filename_pattern": "default-http-backend.yml",
-			"filename": "default-http-backend.yml",
-			"description": "Default HTTP Backend",
-			"context_type": "stack",
-			"tags": ["setup", "config"],
-			"preferred_sequence": -9997
-		},
-		{
-			"name": "Custom",
-			"filename_pattern": "blank.yml",
-			"filename": "blank.yml",
-			"description": "Blank custom file",
-			"context_type": "stack",
-			"tags": [],
-			"preferred_sequence": 9998
-		}
-	],
-	"policies": [
-		{
-			"name": "Custom",
-			"filename": "blank.cop",
-			"description": "Blank custom file",
-			"selector": "",
-			"tags": [],
-			"preferred_sequence": 9998
-		}
-	]
+	"public": true,
+	"name": "cloud66",
+	"long_name": "General Cloud 66 Base Template Repository",
+	"description": "Default Base Template Repository with the general stencils for our customers to get started with Skycap",
+	"templates": {
+		"stencils": [
+			{
+				"name": "Ingress",
+				"filename_pattern": "${service}_ingress.yml",
+				"filename": "ingress.yml",
+				"description": "Defines an ingress",
+				"context_type": "service",
+				"tags": ["ingress"],
+				"preferred_sequence": 3,
+				"suggested": true,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Service",
+				"filename_pattern": "${service}_service.yml",
+				"filename": "service.yml",
+				"description": "Defines a service",
+				"context_type": "service",
+				"tags": ["service"],
+				"preferred_sequence": 2,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
+			{
+				"name": "Deployment",
+				"filename_pattern": "${service}_deploy.yml",
+				"filename": "deploy.yml",
+				"description": "Defines a deployment",
+				"context_type": "service",
+				"tags": ["deployment"],
+				"preferred_sequence": 1,
+				"suggested": true,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Setup",
+				"filename_pattern": "setup.yml",
+				"filename": "setup.yml",
+				"description": "Setup namespace, etc",
+				"context_type": "stack",
+				"tags": ["setup"],
+				"preferred_sequence": -9999,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "ExternalDNS",
+				"filename_pattern": "external-dns.yml",
+				"filename": "external-dns.yml",
+				"description": "ExternalDNS setup with Cloud 66 ZoneDNS",
+				"context_type": "stack",
+				"tags": ["external-dns"],
+				"preferred_sequence": -9998,
+				"suggested": true,
+				"min_usage": 0,
+				"max_usage": 1
+			},
+			{
+				"name": "Cert Manager",
+				"filename_pattern": "cert-manager.yml",
+				"filename": "cert-manager.yml",
+				"description": "Kubernetes cert-manager setup",
+				"context_type": "stack",
+				"tags": ["cert-manager"],
+				"preferred_sequence": -9997,
+				"suggested": true,
+				"min_usage": 0,
+				"max_usage": 1
+			},
+			{
+				"name": "Secrets",
+				"filename_pattern": "secrets.yml",
+				"filename": "secrets.yml",
+				"description": "Kubernetes secret store creation",
+				"context_type": "stack",
+				"tags": ["config"],
+				"preferred_sequence": -9994,
+				"suggested": false,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
+			{
+				"name": "Event Relay",
+				"filename_pattern": "event-relay.yml",
+				"filename": "event-relay.yml",
+				"description": "Notify when formations deployed",
+				"context_type": "stack",
+				"tags": ["config", "setup"],
+				"preferred_sequence": -9996,
+				"suggested": false,
+				"min_usage": 1,
+				"max_usage": 9999
+			},
+			{
+				"name": "Custom",
+				"filename_pattern": "blank.yml",
+				"filename": "blank.yml",
+				"description": "Blank custom file",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": 9998,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "MySQL Secrets",
+				"filename_pattern": "_mysql.yml",
+				"filename": "_mysql.yml",
+				"description": "MySQL Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "PostgreSQL Secrets",
+				"filename_pattern": "_postgresql.yml",
+				"filename": "_postgresql.yml",
+				"description": "PostgreSQL Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "Redis Secrets",
+				"filename_pattern": "_redis.yml",
+				"filename": "_redis.yml",
+				"description": "Redis Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
+				"name": "MongoDB Secrets",
+				"filename_pattern": "_mongodb.yml",
+				"filename": "_mongodb.yml",
+				"description": "MongoDB Secrets",
+				"context_type": "stack",
+				"tags": [],
+				"preferred_sequence": -9999,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			}
+		],
+		"policies": [],
+		"transformations": [],
+		"helm_charts": [
+            {
+                "name": "MySQL",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/mysql.yml"
+                }],
+                "description": "Formation Integrated MySQL values.yml",
+                "tags": ["database", "mysql"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "mysql",
+                "chart_version": "1.2.1",
+                "dependencies": ["stencils/_mysql.yml"]
+            },
+            {
+                "name": "PostgreSQL",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/postgresql.yml"
+                }],
+                "description": "Formation Integrated PostgreSQL values.yml",
+                "tags": ["database", "postgresql"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "postgresql",
+                "chart_version": "5.3.11",
+                "dependencies": ["stencils/_postgresql.yml"]
+            },
+            {
+                "name": "Redis",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/redis.yml"
+                }],
+                "description": "Formation Integrated Redis values.yml",
+                "tags": ["database", "redis"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "redis",
+                "chart_version": "8.0.14",
+                "dependencies": ["stencils/_redis.yml"]
+            },
+            {
+                "name": "MongoDB",
+                "modifiers": [{
+                    "type": "values.yml",
+                    "filename": "helm_charts/mongodb.yml"
+                }],
+                "description": "Formation Integrated MongoDB values.yml",
+                "tags": ["database", "mongodb"],
+                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+                "chart_name": "mongodb",
+                "chart_version": "5.20.3",
+                "dependencies": ["stencils/_mongodb.yml"]
+            }
+        ],
+        "workflows":
+        [
+            {
+                "name": "Setup Workflow",
+                "description": "Render and deploy of setups stencils and helm releases",
+                "tags": [],
+                "filename": "setup.yml"
+            },
+            {
+                "name": "Helm Release Inline",
+                "description": "partial for helm release deployment",
+                "tags": [],
+                "filename": "_helm_upgrade.yml"
+            }
+        ]
+    }
 }
