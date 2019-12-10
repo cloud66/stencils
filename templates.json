@@ -168,13 +168,17 @@
 				"name": "blank.js",
 				"filename": "blank.js",
 				"tags": [],
-				"preferred_sequence": 9999
+				"preferred_sequence": 9999,
+				"min_usage": 0,
+				"max_usage": 9999
 			},
 			{
 				"name": "no_latest.js",
 				"filename": "no_latest.js",
 				"tags": ["image"],
-				"preferred_sequence": 1
+				"preferred_sequence": 1,
+				"min_usage": 1,
+				"max_usage": 1
 			}
 		],
 		"transformations": [
@@ -182,25 +186,33 @@
 				"name": "blank.js",
 				"filename": "blank.js",
 				"tags": [],
-				"preferred_sequence": 9999
+				"preferred_sequence": 9999,
+				"min_usage": 0,
+				"max_usage": 9999
 			},
 			{
 				"name": "annotations.js",
 				"filename": "annotations.js",
 				"tags": ["annotations"],
-				"preferred_sequence": 1
+				"preferred_sequence": 1,
+				"min_usage": 1,
+				"max_usage": 1
 			},
 			{
 				"name": "dns.js",
 				"filename": "dns.js",
 				"tags": ["dns", "network", "containernet", "zonedns"],
-				"preferred_sequence": 3
+				"preferred_sequence": 3,
+				"min_usage": 0,
+				"max_usage": 9999
 			},
 			{
 				"name": "ssl.js",
 				"filename": "ssl.js",
 				"tags": ["ssl", "network", "containernet"],
-				"preferred_sequence": 4
+				"preferred_sequence": 4,
+				"min_usage": 0,
+				"max_usage": 9999
 			}
 		],
 		"helm_charts": [
