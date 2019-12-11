@@ -346,7 +346,16 @@
 		"filters": [
 			{
 				"uid": "",
+				"name": "blank",
+				"filename": "blank.json",
+				"description": "Empty filter (passes all)",
+				"tags": [],
+				"min_usage": 1
+			},
+			{
+				"uid": "",
 				"name": "Setup Filter",
+				"description": "Select anything with a tag called 'setup'",
 				"filename": "setup.json",
 				"tags": [],
 				"min_usage": 1
