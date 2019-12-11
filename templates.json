@@ -346,7 +346,7 @@
 		"filters": [
 			{
 				"uid": "",
-				"name": "setup",
+				"name": "Setup Filter",
 				"filename": "setup.json",
 				"tags": [],
 				"min_usage": 1
