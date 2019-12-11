@@ -12,7 +12,9 @@
 				"filename": "ingress.yml",
 				"description": "Defines an ingress",
 				"context_type": "service",
-				"tags": ["ingress"],
+				"tags": [
+					"ingress"
+				],
 				"preferred_sequence": 3,
 				"suggested": true,
 				"min_usage": 0,
@@ -24,7 +26,9 @@
 				"filename": "service.yml",
 				"description": "Defines a service",
 				"context_type": "service",
-				"tags": ["service"],
+				"tags": [
+					"service"
+				],
 				"preferred_sequence": 2,
 				"suggested": true,
 				"min_usage": 1,
@@ -36,7 +40,9 @@
 				"filename": "deploy.yml",
 				"description": "Defines a deployment",
 				"context_type": "service",
-				"tags": ["deployment"],
+				"tags": [
+					"deployment"
+				],
 				"preferred_sequence": 1,
 				"suggested": true,
 				"min_usage": 0,
@@ -48,7 +54,9 @@
 				"filename": "setup.yml",
 				"description": "Setup namespace, etc",
 				"context_type": "stack",
-				"tags": ["setup"],
+				"tags": [
+					"setup"
+				],
 				"preferred_sequence": -9999,
 				"suggested": true,
 				"min_usage": 1,
@@ -60,7 +68,9 @@
 				"filename": "external-dns.yml",
 				"description": "ExternalDNS setup with Cloud 66 ZoneDNS",
 				"context_type": "stack",
-				"tags": ["external-dns"],
+				"tags": [
+					"external-dns"
+				],
 				"preferred_sequence": -9998,
 				"suggested": true,
 				"min_usage": 0,
@@ -72,7 +82,10 @@
 				"filename": "cert-manager.yml",
 				"description": "Kubernetes cert-manager setup",
 				"context_type": "stack",
-				"tags": ["cert-manager", "cluster"],
+				"tags": [
+					"cert-manager",
+					"cluster"
+				],
 				"preferred_sequence": -9997,
 				"suggested": true,
 				"min_usage": 0,
@@ -84,7 +97,9 @@
 				"filename": "secrets.yml",
 				"description": "Kubernetes secret store creation",
 				"context_type": "stack",
-				"tags": ["config"],
+				"tags": [
+					"config"
+				],
 				"preferred_sequence": -9994,
 				"suggested": false,
 				"min_usage": 1,
@@ -96,7 +111,11 @@
 				"filename": "event-relay.yml",
 				"description": "Notify when formations deployed",
 				"context_type": "stack",
-				"tags": ["config", "setup", "cluster"],
+				"tags": [
+					"config",
+					"setup",
+					"cluster"
+				],
 				"preferred_sequence": -9996,
 				"suggested": false,
 				"min_usage": 1,
@@ -175,7 +194,9 @@
 			{
 				"name": "no_latest.js",
 				"filename": "no_latest.js",
-				"tags": ["image"],
+				"tags": [
+					"image"
+				],
 				"preferred_sequence": 1,
 				"min_usage": 1,
 				"max_usage": 1
@@ -193,7 +214,9 @@
 			{
 				"name": "annotations.js",
 				"filename": "annotations.js",
-				"tags": ["annotations"],
+				"tags": [
+					"annotations"
+				],
 				"preferred_sequence": 1,
 				"min_usage": 1,
 				"max_usage": 1
@@ -201,7 +224,12 @@
 			{
 				"name": "dns.js",
 				"filename": "dns.js",
-				"tags": ["dns", "network", "containernet", "zonedns"],
+				"tags": [
+					"dns",
+					"network",
+					"containernet",
+					"zonedns"
+				],
 				"preferred_sequence": 3,
 				"min_usage": 0,
 				"max_usage": 9999
@@ -209,80 +237,119 @@
 			{
 				"name": "ssl.js",
 				"filename": "ssl.js",
-				"tags": ["ssl", "network", "containernet"],
+				"tags": [
+					"ssl",
+					"network",
+					"containernet"
+				],
 				"preferred_sequence": 4,
 				"min_usage": 0,
 				"max_usage": 9999
 			}
 		],
 		"helm_charts": [
-            {
-                "name": "MySQL",
-                "modifiers": [{
-                    "type": "values.yml",
-                    "filename": "helm_charts/mysql.yml"
-                }],
-                "description": "Formation Integrated MySQL values.yml",
-                "tags": ["database", "mysql"],
-                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
-                "chart_name": "mysql",
-                "chart_version": "1.2.1",
-                "dependencies": ["stencils/_mysql_credentials.yml"]
-            },
-            {
-                "name": "PostgreSQL",
-                "modifiers": [{
-                    "type": "values.yml",
-                    "filename": "helm_charts/postgresql.yml"
-                }],
-                "description": "Formation Integrated PostgreSQL values.yml",
-                "tags": ["database", "postgresql"],
-                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
-                "chart_name": "postgresql",
-                "chart_version": "5.3.11",
-                "dependencies": ["stencils/_postgresql_credentials.yml"]
-            },
-            {
-                "name": "Redis",
-                "modifiers": [{
-                    "type": "values.yml",
-                    "filename": "helm_charts/redis.yml"
-                }],
-                "description": "Formation Integrated Redis values.yml",
-                "tags": ["database", "redis"],
-                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
-                "chart_name": "redis",
-                "chart_version": "8.0.14",
-                "dependencies": ["stencils/_redis_credentials.yml"]
-            },
-            {
-                "name": "MongoDB",
-                "modifiers": [{
-                    "type": "values.yml",
-                    "filename": "helm_charts/mongodb.yml"
-                }],
-                "description": "Formation Integrated MongoDB values.yml",
-                "tags": ["database", "mongodb"],
-                "chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
-                "chart_name": "mongodb",
-                "chart_version": "5.20.3",
-                "dependencies": ["stencils/_mongodb_credentials.yml"]
-            }
-        ],
-        "workflows":
-        [
-            {
-                "name": "Setup Workflow",
-                "description": "Render and deploy of setups stencils and helm releases",
-                "tags": [],
-                "filename": "setup.yml"
-            },
-            {
-                "name": "Helm Release Inline",
-                "description": "partial for helm release deployment",
-                "tags": [],
-                "filename": "_helm_upgrade.yml"
-            }
-        ]
-    }
+			{
+				"name": "MySQL",
+				"modifiers": [
+					{
+						"type": "values.yml",
+						"filename": "helm_charts/mysql.yml"
+					}
+				],
+				"description": "Formation Integrated MySQL values.yml",
+				"tags": [
+					"database",
+					"mysql"
+				],
+				"chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+				"chart_name": "mysql",
+				"chart_version": "1.2.1",
+				"dependencies": [
+					"stencils/_mysql_credentials.yml"
+				]
+			},
+			{
+				"name": "PostgreSQL",
+				"modifiers": [
+					{
+						"type": "values.yml",
+						"filename": "helm_charts/postgresql.yml"
+					}
+				],
+				"description": "Formation Integrated PostgreSQL values.yml",
+				"tags": [
+					"database",
+					"postgresql"
+				],
+				"chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+				"chart_name": "postgresql",
+				"chart_version": "5.3.11",
+				"dependencies": [
+					"stencils/_postgresql_credentials.yml"
+				]
+			},
+			{
+				"name": "Redis",
+				"modifiers": [
+					{
+						"type": "values.yml",
+						"filename": "helm_charts/redis.yml"
+					}
+				],
+				"description": "Formation Integrated Redis values.yml",
+				"tags": [
+					"database",
+					"redis"
+				],
+				"chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+				"chart_name": "redis",
+				"chart_version": "8.0.14",
+				"dependencies": [
+					"stencils/_redis_credentials.yml"
+				]
+			},
+			{
+				"name": "MongoDB",
+				"modifiers": [
+					{
+						"type": "values.yml",
+						"filename": "helm_charts/mongodb.yml"
+					}
+				],
+				"description": "Formation Integrated MongoDB values.yml",
+				"tags": [
+					"database",
+					"mongodb"
+				],
+				"chart_repository_url": "https://kubernetes-charts.storage.googleapis.com",
+				"chart_name": "mongodb",
+				"chart_version": "5.20.3",
+				"dependencies": [
+					"stencils/_mongodb_credentials.yml"
+				]
+			}
+		],
+		"workflows": [
+			{
+				"name": "Setup Workflow",
+				"description": "Render and deploy of setups stencils and helm releases",
+				"tags": [],
+				"filename": "setup.yml"
+			},
+			{
+				"name": "Helm Release Inline",
+				"description": "partial for helm release deployment",
+				"tags": [],
+				"filename": "_helm_upgrade.yml"
+			}
+		],
+		"filters": [
+			{
+				"uid": "",
+				"name": "setup",
+				"filename": "setup.json",
+				"tags": []
+			}
+		]
+	}
 }
