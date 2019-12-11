@@ -350,7 +350,7 @@
 				"filename": "blank.json",
 				"description": "Empty filter (passes all)",
 				"tags": [],
-				"min_usage": 1
+				"min_usage": 0
 			},
 			{
 				"uid": "",
