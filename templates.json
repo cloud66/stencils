@@ -348,7 +348,8 @@
 				"uid": "",
 				"name": "setup",
 				"filename": "setup.json",
-				"tags": []
+				"tags": [],
+				"min_usage": 1
 			}
 		]
 	}
