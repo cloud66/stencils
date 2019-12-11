@@ -1,23 +1,21 @@
+#!remove-empty
 # this is a Stencil for Kubernetes service.
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: ${formation}
-  name: ${concat(service, "-svc")}
+  namespace: ${formation.name}
+  name: ${concat(service.name, "-svc")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}    
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
-    cloud66.com/service-name: ${service}
+    cloud66.com/service-name: ${service.name}
   labels:
-    app: ${stackname}
-    tier: ${service}
+    app: ${application.name}
+    tier: ${service.name}
 spec:
-  type: NodePort
+  type: NodePort # NodePort assumes you're using an ingress. You can use LoadBalancer or ClusterIP options here
   ports:
-  - port: ${require("EXTERNAL_PORT")}
-    targetPort: ${require("INTERNAL_PORT")}
+  # service.port is a shorthand for service.ports[0]. If you have more than 1 port, you can use the full syntax
+  - port: ${service.port.http}
+    targetPort: ${service.port.container}
   selector:
-    app: ${stackname}
-    tier: ${service}
+    app: ${application.name}
+    tier: ${service.name}
