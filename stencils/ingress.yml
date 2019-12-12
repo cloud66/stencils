@@ -1,38 +1,28 @@
----
+#!remove-empty
 # this is a Stencil for Kubernetes service.
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: ${formation}
-  name: ${concat(service, "-ingress")}
+  namespace: ${formation.name}
+  name: ${concat(service.name, "-ingress")}
   annotations:
-    cloud66.com/formation-uuid: ${formation["uuid"]}
-    cloud66.com/stencil-uuid: ${stencil["uuid"]}
-    cloud66.com/snapshot-uid: ${snapshot["uid"]}
-    cloud66.com/snapshot-gitref: ${snapshot["gitref"]}
-    # uncomment this annotation and replace the value with your class of ingress controller
-    # kubernetes.io/ingress.class: "nginx"
-    # uncomment the following two annotations to allow cert-manager to issue an SSL certificate for this ingress
-    # if you plan to use cert-manager, make sure that you include the cert_manager.yml stencil
-    # certmanager.k8s.io/cluster-issuer: cert-manager-cluster-issuer
-    # certmanager.k8s.io/acme-challenge-type: http01
+    kubernetes.io/ingress.class: "nginx"
   labels:
-    app: ${stackname}
-    tier: ${service}
+    app: ${application.name}
+    tier: ${service.name}
 spec:
-  # uncomment the following section to set up the ingress rules
-  # if you plan to use the endpoint function for the host, make sure that you include the external_dns.yml stencil
+  # use the ingress.js transformer to automatically configure this ingress.
+  # the following are examples and can be removed
   # rules:
-  # - host: ${endpoint(service["name"])}
+  # - host: ${service.endpoint}
   #   http:
   #     paths:
   #     - backend:
-  #         serviceName: ${concat(service, "-svc")}
-  #         servicePort: ${require("EXTERNAL_PORT")}
+  #         serviceName: ${concat(service.name, "-svc")}
+  #         servicePort: ${service.port.http}
   #
-  # uncomment the following section to let cert-manager know it should generate an SSL certificate for the given hosts and store it in the given secret
-  # if you plan to use cert-manager, make sure that you include the cert_manager.yml stencil
+  # use the ssl.js transformer to add SSL to this ingress. Make sure you have cert_manager stencil added to your cluster
   # tls:
-  # - secretName: ${service}-tls
+  # - secretName: ${concat(service.name, "-tls")}
   #   hosts:
-  #   - ${endpoint(service["name"])}
+  #   - ${service.endpoint}
