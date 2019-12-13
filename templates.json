@@ -353,7 +353,7 @@
 			},
 			{
 				"name": "setup",
-				"description": "Select anything with a tag called 'setup'",
+				"description": "Select stencils with a tag value 'setup'",
 				"filename": "setup.json",
 				"tags": [],
 				"min_usage": 1
