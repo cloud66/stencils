@@ -1,9 +1,0 @@
-# this sets up the cluster with namepsace etc
-# should be the first yaml to run
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: c66-system
-  labels:
-    certmanager.k8s.io/disable-validation: "true"
-    cloud66.com/relay-events: "true"

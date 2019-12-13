@@ -49,10 +49,10 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "Setup Cloud 66 Namespace",
-				"filename_pattern": "setup-namespace-c66.yml",
-				"filename": "setup-namespace-c66.yml",
-				"description": "Setup Cloud 66 Namespace",
+				"name": "Setup Base Requirements",
+				"filename_pattern": "setup.yml",
+				"filename": "setup.yml",
+				"description": "Setup Cloud 66 Base Requirements",
 				"context_type": "stack",
 				"tags": [
 					"setup"
@@ -63,52 +63,10 @@
 				"max_usage": 1
 			},
 			{
-				"name": "Setup Service Account",
-				"filename_pattern": "setup-service-account.yml",
-				"filename": "setup-service-account.yml",
-				"description": "Setup Service Account",
-				"context_type": "stack",
-				"tags": [
-					"setup"
-				],
-				"preferred_sequence": -9998,
-				"suggested": true,
-				"min_usage": 1,
-				"max_usage": 1
-			},
-			{
-				"name": "Setup RBAC",
-				"filename_pattern": "setup-rbac.yml",
-				"filename": "setup-rbac.yml",
-				"description": "Setup RBAC",
-				"context_type": "stack",
-				"tags": [
-					"setup"
-				],
-				"preferred_sequence": -9997,
-				"suggested": true,
-				"min_usage": 1,
-				"max_usage": 1
-			},
-			{
-				"name": "Setup Application Namespace",
-				"filename_pattern": "setup-namespace-app.yml",
-				"filename": "setup-namespace-app.yml",
-				"description": "Setup Application Namespace",
-				"context_type": "stack",
-				"tags": [
-					"setup"
-				],
-				"preferred_sequence": -9996,
-				"suggested": true,
-				"min_usage": 1,
-				"max_usage": 1
-			},
-			{
-				"name": "Account Secrets",
-				"filename_pattern": "secrets-account.yml",
-				"filename": "secrets-account.yml",
-				"description": "Account Secrets",
+				"name": "Setup Secrets",
+				"filename_pattern": "secrets.yml",
+				"filename": "secrets.yml",
+				"description": "Setup Secrets",
 				"context_type": "stack",
 				"tags": [
 					"setup",
@@ -118,51 +76,6 @@
 				"suggested": true,
 				"min_usage": 1,
 				"max_usage": 1
-			},
-			{
-				"name": "Registry Secrets",
-				"filename_pattern": "secrets-registry.yml",
-				"filename": "secrets-registry.yml",
-				"description": "Registry Secrets",
-				"context_type": "stack",
-				"tags": [
-					"setup",
-					"secrets"
-				],
-				"preferred_sequence": -9994,
-				"suggested": true,
-				"min_usage": 1,
-				"max_usage": 1
-			},
-			{
-				"name": "Configstore Secrets",
-				"filename_pattern": "secrets-configstore.yml",
-				"filename": "secrets-configstore.yml",
-				"description": "Configstore Secrets",
-				"context_type": "stack",
-				"tags": [
-					"setup",
-					"secrets"
-				],
-				"preferred_sequence": -9993,
-				"suggested": false,
-				"min_usage": 1,
-				"max_usage": 9999
-			},
-			{
-				"name": "Environment Variables Secrets",
-				"filename_pattern": "secrets-environment-variables.yml",
-				"filename": "secrets-environment-variables.yml",
-				"description": "Environment Variables Secrets",
-				"context_type": "stack",
-				"tags": [
-					"setup",
-					"secrets"
-				],
-				"preferred_sequence": -9992,
-				"suggested": false,
-				"min_usage": 1,
-				"max_usage": 9999
 			},
 			{
 				"name": "ExternalDNS",
