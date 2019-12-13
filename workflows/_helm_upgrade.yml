@@ -1,6 +1,6 @@
-- name: helm-${name}
-  command: bash -c 'cx snapshots render --stack "${application.name}" --snapshot ${snapshot.uuid} --formation ${formation.uuid} --files ${join(fetch(concat("$.application.helm.release_configurations[?(@.helm_release.uuid==",uuid,")].git.file_path")))} | helm upgrade --install --force --reset-values --namespace "${formation.name}" "${uuid}" "${helm(name, "url")}" -f - '
+- name: helm-${locals.name}
+  command: bash -c 'cx snapshots render --stack "${application.name}" --snapshot ${snapshot.uuid} --formation ${formation.uuid} --files ${join(fetch(concat("$.stack.helm.release_configurations[?(@.helm_release.uuid==",locals.uuid,")].git.file_path")))} | helm upgrade --install --force --reset-values --namespace "${formation.name}" "${locals.uuid}" "${helm(locals.name, "url")}" -f - '
   preflights:
     - command: "helm version"
-      message: "It looks like you don't have Helm installed! This page might help you install it https://helm.sh/docs/using_helm/"
+      message: "It looks like you don't have Helm or Tiller installed! This page might help you install it https://helm.sh/docs/using_helm/"
   depends_on: ["setup"]
