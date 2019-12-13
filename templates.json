@@ -49,15 +49,30 @@
 				"max_usage": 9999
 			},
 			{
-				"name": "Setup",
+				"name": "Setup Base Requirements",
 				"filename_pattern": "setup.yml",
 				"filename": "setup.yml",
-				"description": "Setup namespace, etc",
+				"description": "Setup Cloud 66 Base Requirements",
 				"context_type": "stack",
 				"tags": [
 					"setup"
 				],
 				"preferred_sequence": -9999,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "Setup Secrets",
+				"filename_pattern": "secrets.yml",
+				"filename": "secrets.yml",
+				"description": "Setup Secrets",
+				"context_type": "stack",
+				"tags": [
+					"setup",
+					"secrets"
+				],
+				"preferred_sequence": -9995,
 				"suggested": true,
 				"min_usage": 1,
 				"max_usage": 1
@@ -90,20 +105,6 @@
 				"suggested": true,
 				"min_usage": 0,
 				"max_usage": 1
-			},
-			{
-				"name": "Secrets",
-				"filename_pattern": "secrets.yml",
-				"filename": "secrets.yml",
-				"description": "Kubernetes secret store creation",
-				"context_type": "stack",
-				"tags": [
-					"config"
-				],
-				"preferred_sequence": -9994,
-				"suggested": false,
-				"min_usage": 1,
-				"max_usage": 9999
 			},
 			{
 				"name": "Event Relay",
@@ -218,7 +219,7 @@
 					"annotations"
 				],
 				"preferred_sequence": 1,
-				"min_usage": 1,
+				"min_usage": 0,
 				"max_usage": 1
 			},
 			{
@@ -345,7 +346,6 @@
 		],
 		"filters": [
 			{
-				"uid": "",
 				"name": "blank",
 				"filename": "blank.json",
 				"description": "Empty filter (passes all)",
@@ -353,9 +353,8 @@
 				"min_usage": 0
 			},
 			{
-				"uid": "",
-				"name": "Setup Filter",
-				"description": "Select anything with a tag called 'setup'",
+				"name": "setup",
+				"description": "Select stencils with a tag value 'setup'",
 				"filename": "setup.json",
 				"tags": [],
 				"min_usage": 1

@@ -9,6 +9,15 @@ metadata:
     cloud66.com/relay-events: "true"
 ---
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: ${formation.name}
+  annotations:
+    cloud66.com/relay-events: "true"
+---
+# this sets up the cluster with namespace etc
+# should be the first yaml to run
+apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: c66-user
@@ -27,19 +36,12 @@ subjects:
   name: c66-user
   namespace: c66-system
 ---
+# Secret store for private registry credentials
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: ${formation.name}
-  annotations:
-    cloud66.com/relay-events: "true"
----
-# Secret store for account level secrets
 kind: Secret
-apiVersion: v1
-type: Opaque
 metadata:
   namespace: ${formation.name}
-  name: account-secrets
-stringData:
-  api.key: ${account.api_key}
+  name: cloud66-registry-pull-secret
+data:
+  .dockerconfigjson: ${registry_credentials()}
+type: kubernetes.io/dockerconfigjson

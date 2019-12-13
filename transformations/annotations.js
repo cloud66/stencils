@@ -4,8 +4,12 @@ $$.forEach(function($) {
         $.annotations = {}
     }
 
-    $.annotations["cloud66.com/formation-uuid"] = "${formation.uuid}"
-    $.annotations["cloud66.com/stencil-uuid"] = "${stencil.uuid}"
-    $.annotations["cloud66.com/snapshot-uid"] = "${snapshot.uuid}"
-    $.annotations["cloud66.com/snapshot-gitref"] = "${snapshot.gitref}"
+    if ($.annotations.metadata == null) {
+        $.annotations.metadata = {}
+    }
+
+    $.metadata.annotations["cloud66.com/formation-uuid"] = "${formation.uuid}"
+    $.metadata.annotations["cloud66.com/stencil-uuid"] = "${stencil.uuid}"
+    $.metadata.annotations["cloud66.com/snapshot-uid"] = "${snapshot.uuid}"
+    $.metadata.annotations["cloud66.com/snapshot-gitref"] = "${snapshot.gitref}"
 });
