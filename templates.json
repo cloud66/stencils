@@ -223,6 +223,16 @@
 				"max_usage": 1
 			},
 			{
+				"name": "bouncer.js",
+				"filename": "bouncer.js",
+				"tags": [
+					"bouncer"
+				],
+				"preferred_sequence": 2,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
 				"name": "dns.js",
 				"filename": "dns.js",
 				"tags": [
