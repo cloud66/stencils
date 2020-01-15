@@ -7,10 +7,16 @@ $$.forEach(function($) {
     if ($.kind != "Ingress") {
         return
     }
-    if ($.annotations == null) {
-        $.annotations = {}
+
+    if ($.metadata == null) {
+        $.metadata = {}
     }
-    $.annotations["kubernetes.io/ingress.class"] = "nginx"
+
+    if ($.metadata.annotations == null) {
+        $.metadata.annotations = {}
+    }
+
+    $.metadata.annotations["kubernetes.io/ingress.class"] = "nginx"
     if ($.spec == null) {
         $.spec = {}
     }

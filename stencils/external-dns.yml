@@ -21,7 +21,7 @@ rules:
   verbs: ["get","watch","list"]
 - apiGroups: [""]
   resources: ["nodes"]
-  verbs: ["list"]
+  verbs: ["get","watch","list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
@@ -52,7 +52,7 @@ spec:
       serviceAccountName: external-dns
       containers:
       - name: external-dns
-        image: cloud66/external-dns:latest
+        image: cloud66/external-dns@sha256:669e891edf9ffce86242f30120560a3d7ea79228dc5272451d33b8961aae0840
         args:
         - --source=service
         - --source=ingress

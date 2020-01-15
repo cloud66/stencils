@@ -11,16 +11,14 @@ metadata:
     app: ${application.name}
     tier: ${service.name}
 spec:
-  # use the ingress.js transformer to automatically configure this ingress.
-  # the following are examples and can be removed
-  # rules:
-  # - host: ${service.endpoint}
-  #   http:
-  #     paths:
-  #     - backend:
-  #         serviceName: ${concat(service.name, "-svc")}
-  #         servicePort: ${service.port.http}
-  #
+  rules:
+  - host: ${service.endpoint}
+    http:
+      paths:
+      - backend:
+          serviceName: ${concat(service.name, "-svc")}
+          servicePort: ${service.port.http}
+
   # use the ssl.js transformer to add SSL to this ingress. Make sure you have cert_manager stencil added to your cluster
   # tls:
   # - secretName: ${concat(service.name, "-tls")}

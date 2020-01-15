@@ -7,6 +7,34 @@
 	"templates": {
 		"stencils": [
 			{
+				"name": "Default Backend",
+				"filename_pattern": "default_backend.yml",
+				"filename": "default-http-backend.yml",
+				"description": "A Default HTTP Backend",
+				"context_type": "stack",
+				"tags": [
+					"ingress"
+				],
+				"preferred_sequence": 1,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
+				"name": "Nginx Ingress Controller",
+				"filename_pattern": "nginx_ingress_controller.yml",
+				"filename": "nginx-ingress-controller.yml",
+				"description": "Nginx Ingress Controller",
+				"context_type": "stack",
+				"tags": [
+					"ingress"
+				],
+				"preferred_sequence": 2,
+				"suggested": true,
+				"min_usage": 1,
+				"max_usage": 1
+			},
+			{
 				"name": "Ingress",
 				"filename_pattern": "${service}_ingress.yml",
 				"filename": "ingress.yml",
@@ -17,7 +45,7 @@
 				],
 				"preferred_sequence": 3,
 				"suggested": true,
-				"min_usage": 0,
+				"min_usage": 1,
 				"max_usage": 9999
 			},
 			{
@@ -88,7 +116,7 @@
 				],
 				"preferred_sequence": -9998,
 				"suggested": true,
-				"min_usage": 0,
+				"min_usage": 1,
 				"max_usage": 1
 			},
 			{
@@ -229,19 +257,6 @@
 					"bouncer"
 				],
 				"preferred_sequence": 2,
-				"min_usage": 0,
-				"max_usage": 9999
-			},
-			{
-				"name": "dns.js",
-				"filename": "dns.js",
-				"tags": [
-					"dns",
-					"network",
-					"containernet",
-					"zonedns"
-				],
-				"preferred_sequence": 3,
 				"min_usage": 0,
 				"max_usage": 9999
 			},
