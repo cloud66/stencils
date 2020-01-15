@@ -6358,3 +6358,18 @@ webhooks:
         name: kubernetes
         namespace: default
         path: /apis/webhook.cert-manager.io/v1beta1/validations
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: cert-manager-cluster-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: ${account.primary_email}
+    privateKeySecretRef:
+      name: cert-manager-letsencrypt-production-key
+    solvers:
+    - http01:
+        ingress:
+          class: nginx

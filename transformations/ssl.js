@@ -17,6 +17,8 @@ $$.forEach(function($) {
     }
 
     $.metadata.annotations["kubernetes.io/ingress.class"] = "nginx"
+    $.metadata.annotations["cert-manager.io/cluster-issuer"] = "cert-manager-cluster-issuer"
+
     if ($.spec == null) {
         $.spec = {}
     }
