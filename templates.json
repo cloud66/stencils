@@ -386,6 +386,13 @@
 				"filename": "setup.json",
 				"tags": [],
 				"min_usage": 1
+			},
+			{
+				"name": "deploy",
+				"description": "Select all stencils without the 'setup' tag",
+				"filename": "deploy.json",
+				"tags": [],
+				"min_usage": 1
 			}
 		]
 	}
