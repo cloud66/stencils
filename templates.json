@@ -41,7 +41,8 @@
 				"description": "Defines an ingress",
 				"context_type": "service",
 				"tags": [
-					"ingress"
+					"ingress",
+					"dns"
 				],
 				"preferred_sequence": 3,
 				"suggested": true,
@@ -112,7 +113,8 @@
 				"description": "ExternalDNS setup with Cloud 66 ZoneDNS",
 				"context_type": "stack",
 				"tags": [
-					"external-dns"
+					"external-dns",
+					"dns"
 				],
 				"preferred_sequence": -9998,
 				"suggested": true,
@@ -127,6 +129,7 @@
 				"context_type": "stack",
 				"tags": [
 					"cert-manager",
+					"ssl",
 					"cluster"
 				],
 				"preferred_sequence": -9997,
