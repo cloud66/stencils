@@ -21,6 +21,21 @@
 				"max_usage": 1
 			},
 			{
+				"name": "Helm Service Account",
+				"filename_pattern": "helm_service_account.yml",
+				"filename": "helm-service-account.yml",
+				"description": "Creates a service account for Tiller (Helm)",
+				"context_type": "stack",
+				"tags": [
+					"helm",
+					"tiller"
+				],
+				"preferred_sequence": 1,
+				"suggested": true,
+				"min_usage": 0,
+				"max_usage": 1
+			},
+			{
 				"name": "Nginx Ingress Controller",
 				"filename_pattern": "nginx_ingress_controller.yml",
 				"filename": "nginx-ingress-controller.yml",
