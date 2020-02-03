@@ -61,6 +61,7 @@ spec:
         - --zonedns-scheme=${container_net.scheme}
         - --zonedns-host=${container_net.host}
         - --zonedns-port=${container_net.port}
+        - --txt-prefix=txt.
         env:
         - name: EXTERNAL_DNS_ZONEDNS_CLOUD66_ACCOUNT_API_KEY
           valueFrom:
