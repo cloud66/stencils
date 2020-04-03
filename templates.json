@@ -181,6 +181,18 @@
 				"max_usage": 9999
 			},
 			{
+				"name": "Custome Service",
+				"filename_pattern": "${service}.yml",
+				"filename": "blank_service.yml",
+				"description": "Blank custom file for service",
+				"context_type": "service",
+				"tags": [],
+				"preferred_sequence": 9998,
+				"suggested": false,
+				"min_usage": 0,
+				"max_usage": 9999
+			},
+			{
 				"name": "MySQL Secrets",
 				"filename_pattern": "_mysql_credentials.yml",
 				"filename": "_mysql_credentials.yml",
