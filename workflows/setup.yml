@@ -1,7 +1,7 @@
 version: 1
 steps:
   - name: setup
-    command: bash -c 'cx snapshots render --stack "${application.display_name}" --snapshot ${snapshot.uuid} --formation ${formation.uuid} --filter "setup" | kubectl apply -f - '
+    command: bash -c 'cx snapshots render --stack "${application.display_name}" --snapshot ${snapshot.uuid} --formation ${formation.uuid} --filter "setup" --ignore-warnings | kubectl apply -f - '
     preflights:
       - command: "cx version"
         message: "It looks like you don't have cx installed! This page can help you install it https://help.cloud66.com/skycap/quickstarts/using-cloud66-toolbelt.html"
